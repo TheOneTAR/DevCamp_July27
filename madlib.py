@@ -12,14 +12,14 @@ theInput = input("Please type the name of a state. >> ")
 article += theInput + " man and his family, who collected $"
 
 # we continue this process until the article is complete
-theInput = input("Please enter a large number. >> ")
-article += theInput + " through charities promising to help "
+number = input("Please enter a large number. >> ")
+article += number + " through charities promising to help "
 
-theInput = input("Please type in a group of people. >> ")
-article += theInput + ", spent much of the money on themselves. Expenses ranged from "
+people = input("Please type in a group of people. >> ")
+article +=  people + ", spent much of the money on themselves. Expenses ranged from "
 
-theInput = input("Please type in something expensive. >> ")
-article += theInput + " to "
+expensive = input("Please type in something expensive. >> ")
+article += expensive + " to "
 
 theInput = input("Please type in another opulent object. >> ")
 article += theInput + ", according to "
