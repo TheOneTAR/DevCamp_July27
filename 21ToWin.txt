@@ -1,0 +1,31 @@
+# 21 to win!
+# ------------
+Pair up and create a game of 21, or Blackjack. 
+
+Number cards have their face value, jacks, kings and queens are worth 10. Ace can be either 1 or 11 and the player who holds the ace gets to choose the value of the card.
+
+The dealer and all other players have two cards. With the exception of the dealer the players have their cards face up. The dealer has one card up and one card face down.
+
+The dealer goes to each player one at a time. The player needs to decide if they want another card (hit) or will sit on what they have. You can have as many cards as you like as long as you don’t go over 21. The dealer does this with every player. Players are not competing against each other, but against the dealer.
+
+The dealer then turns over their other card and needs to decide what to do. If the dealer has 16 or under then they must take another card.
+
+If the dealer has 21 (Ace and a ten value card) the dealer wins.
+
+If the dealer goes bust then everyone else wins.
+
+
+# Use the skills we've learned thus far to the best of your abilities – there is no "perfect" solution – as long as your game works, you've succeeded.
+
+# Each team needs to plan out their program using some rough class/function diagrams
+
+# Build the skeleton of your code and comment it like crazy!
+
+# Start filling in each section of your program, testing frequently!!
+
+# Play 21!
+
+Bonus:
+- Make a Dealer that plays automatically, so you only need 2 players
+- Make a Player that plays automatically so you can play solo
+- Make it so that you can have the computer play as all three players
