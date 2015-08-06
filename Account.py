@@ -70,25 +70,30 @@ class Bank:
 
    def new_customer(self, first_name, last_name, email):
       new_customer = Person(first_name, last_name, email)
-      customers[email] = new_customer
+      self.customers[email] = new_customer
 
    def remove_customer(self, email):
       del self.customers[email]
 
-   def show_customer_info(self, email):
-      pass
-
-   def customer_deposit(self, email, money, account_name):
-      pass
-
-   def customer_withdraw(self, email, money, account_name):
-      pass
-
-   def make_customer_account(self, email, money, account_name):
-      pass
+   def make_customer_account(self, email, money, account_name, account_type="checking"):
+      self.customers[email].open_account(money, account_name, account_type)
 
    def remove_customer_account(self, email, account_name):
-      pass
+      self.customers[email].close_account(account_name)
+
+   def show_customer_info(self, email):
+      customer = self.customers[email]
+      print("Hello, {} {}, and welcome to Simple Bank".format(customer.first_name, customer.last_name))
+      print("Here is your account info:")
+      customer.show_accounts()
+
+   def customer_deposit(self, email, money, account_name):
+      self.customers[email].deposit(money, account_name)
+
+   def customer_withdraw(self, email, money, account_name):
+      self.customers[email].withdraw(money, account_name)
+
+
 
 
 
