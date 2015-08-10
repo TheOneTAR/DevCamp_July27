@@ -1,0 +1,63 @@
+- Intro Slide deck
+   - Who am I
+   - Who are they
+   - House rules
+   - Game Plan
+   - Programming vs Science
+
+- Madlib
+   - variables
+   - strings
+   - string concat
+   - printing
+
+- Dice
+   - int vs floats
+   - import
+   - random
+   - functions
+   - print vs return
+   - for loops
+
+- Maze
+   - functions
+   - stack
+   - return vs print
+   - while loops
+   
+- Encode/Decode example
+   - casting to int or str
+   - string slicing
+   - naming conventions for python for loops
+   - file i/o syntax
+   - error types (syntax, runtime, semantic)
+   - join and split string methods
+   - more on functions and arguments
+
+- Boolean Quiz
+   - bools
+   - bool operators
+   - bool practice
+
+- hangman
+   - casting a string as a list
+   
+- mutable v. immutable data types
+   - surprising behavior caused by same
+- flow control (various while loops)
+- prime factorizations
+- prime generation
+- Sort functions
+   - selection
+   - insertion
+- recursion
+   - factorials
+   - fibonacci
+   - merge sort
+- classes
+   - dice example with them to show structure
+   - bank design and implementation by them (guided)
+   - UMLs
+- blackjack/21 game (pair programming, Lab)
+   - Subclasses
+   - repr
