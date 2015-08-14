@@ -1,0 +1,108 @@
+body {
+    background-color: #78736F;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+article {
+    color: #024E70;
+    background-color: #373B2F;
+    padding: 10px;
+    width: 80%;
+    border-style: solid;
+    border-color: #E0E0EB;
+    border-width: 1px;
+    border-radius: 15px;
+}
+
+h1, h5 {
+    color: #41A6C4;
+    padding: 10px;
+}
+
+.first_section {
+    background-color: #E0E0EB;
+    padding: 10px;
+    margin: 10px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 4px;
+}
+
+figure {
+    width: 308px;
+    border-radius: 15px;
+    background-color: #41A6C4;
+    text-align: center;
+    margin: 16px;
+}
+
+figcaption {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+img {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+blockquote {
+    color: #E46B18;
+    font-style: italic;
+    padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius:15px;
+    margin: 16px 16px;
+}
+
+.second_section {
+    background-color: #EAEDCA;
+    padding: 10px;
+    margin: 10px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 4px;
+}
+
+.second_section>ul {
+    color:#23677F;
+}
+
+ul li {
+    color: #222;
+}
+
+li ul li {
+    color: #aaa;
+}
+
+.top_navbar {
+    background-color: #41A6C4;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+}
+
+.top_navbar li {
+    list-style: none;
+    display: inline-block;
+    padding: 10px 10px;
+    margin: 0 30px;
+}
+
+.top_navbar a {
+    text-decoration: none;
+}
+
+.top_navbar a:hover {
+    color: red;
+}
