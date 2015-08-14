@@ -1,0 +1,40 @@
+/** 
+* Max Resnick 2015
+*/
+
+/* Our lovely fonts */
+
+@import url(http://fonts.googleapis.com/css?family=Nova+Square);
+
+* {
+    font-family: 'Nova Square', cursive;
+}
+
+body {
+    margin: 0px;
+    background-color: #eeeeee;
+}
+
+.page-wrapper {
+    margin-left: 14.5%;
+    margin-right: 14.5%;
+    margin-top: 7.8%
+}
+
+main {
+    display: inline-block;
+    max-width: 43%;
+}
+
+aside    {
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+}
+main article {
+    background-color: #fff6e0;
+}
+
+.explanation {
+
+}
