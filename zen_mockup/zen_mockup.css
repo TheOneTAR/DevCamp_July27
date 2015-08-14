@@ -1,0 +1,140 @@
+@import url(http://fonts.googleapis.com/css?family=Nova+Square);
+
+
+/* layout */
+body {
+  font-family: sans-serif;
+  background-color: #eee;
+  color: #000;
+  margin: 0 auto;
+  padding: 5% 20%;
+  max-width: 800px;
+/*   font-weight: 300; */
+}
+h1, h2, h3 {
+  font-family: 'Nova Square', cursive;
+}
+a {
+  color: #E00E00;
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+h1 {
+  font-size: 2em;
+}
+article {
+  border-radius: 1px;
+}
+main, aside {
+  display: inline-block;
+}
+main {
+  width: 60%;
+  min-width: 300px;
+}
+aside {
+  vertical-align: top;
+  margin-left: 5%;
+  text-align: center;
+  width: 30%;
+}
+
+/* header "Mini CSS Zen Garden" */
+header h1 {
+  color: #E23045;
+  margin-bottom: 15px;
+}
+header h2 {
+  background-color: #E23045;
+  color: #FFF6E0;
+  font-size: ;
+  padding: 2px 5px;
+  border-radius: 1px;
+}
+
+/* article "The Road to Enlightenment" */
+section article {
+  background-color: #1B4548;
+  color: #FFF6E0;
+  box-shadow: 20px 35px #7AB3B0;
+  padding: 10px 10px;
+  margin-bottom: 50px;
+}
+section article p {
+  font-weight: 100;
+}
+
+/* main "So What is This About", "Participation" */
+main article {
+  background-color: #FFF6E0;
+  box-shadow: 20px 35px #7AB3B0;
+  padding: 5px 20px;
+  border: 1px solid #000;
+}
+main article {
+  margin-bottom: 10px;
+  border-radius: 2px;
+}
+main article + article {
+  margin-bottom: 50px;
+}
+
+/* footer "HTML, CSS" tags */
+footer {
+  text-align: right;
+}
+footer a {
+  background-color: #918774;
+  color: #FFF6E0;;
+  padding: 3px 5px;
+  box-shadow: 10px 10px #D9CFBC;
+  border-radius: 1px;
+}
+
+/* aside "View This Design's CSS" */
+aside ul {
+  padding-left: 20px;
+  margin-top: 0;
+}
+aside h3 {
+  display: none;
+}
+aside a {
+  background-color: #E23045;
+  color: #FFF6E0;
+  box-shadow: 5px 10px #F49682;
+  font-size: 0.75em;
+  padding: 5px 5px;
+  display: block;
+  width: 100%;
+  margin: 5px;
+}
+
+/* media queries */
+@media screen and (max-width: 800px) {
+  body {
+    padding: 5% 0;
+  }
+  main {
+    display: block;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  aside {
+    width: 100%;
+    margin-left: 0;
+  }
+  aside ul {
+    padding-left: 0;
+  }
+}
+
+
+
+
+
+
+
+
