@@ -1,0 +1,75 @@
+body {
+   background-color:#1bb0ce;
+   font-family: 'Roboto Condensed', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   font-family: 'Metamorphous', cursive;
+}
+
+h2 {
+   color: #4f8699;
+}
+
+p {
+   color: red;
+}
+
+.main_article {
+   background-color: #dad6ca;
+   width: 80%;
+   padding: 20px;
+   margin: 20px;
+   border-radius: 5px
+}
+
+
+.special_section > p:first-child {
+   color: purple;
+}
+
+.special_section {
+   background-color: red;
+}
+
+.special_section p {
+   color: #fff;
+}
+
+.tech_head {
+   color: #a3747c;
+   font-style: oblique;
+   margin-left:65px;
+}
+
+.skill_circle {
+   background-color: #6a5e72; 
+   padding: 5px; 
+   width: 20em; 
+   padding-left: 35px;
+   border-style: solid;
+   border-color: #a3747c;
+   border-radius: 50% 50%;
+   border-width: 2px 40px 5px 1px;
+}
+
+
+ul {
+   color: #eee
+}
+
+li:nth-child(2n) {
+   color: black;
+}
+
+ul ul {
+   color: purple;
+}
+
+ul ul ul {
+   color: green;
+}
+
+ol {
+   color: #999;
+}
