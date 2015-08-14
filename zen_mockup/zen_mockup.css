@@ -212,7 +212,6 @@ footer{
     margin: left;
     display: inline-block;
     min-width: 300px;
-
 }
 .participation{
     margin-bottom: 50px;
@@ -255,9 +254,20 @@ footer{
     display: none;
 }
 
-@media screen and (max-width:700px){
+@media screen and (max-width:720px){
     .sidebar{
-        display:block;
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .participation, .explanation{
+        min-width: 100%;
+    }
+
+    .main.supporting{
+        width: 90%;
+        display: inline-block;
+        margin-right: 50px;
     }
 >>>>>>> zen_mockup.css
 }
