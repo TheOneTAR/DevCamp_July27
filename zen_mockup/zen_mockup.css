@@ -61,8 +61,8 @@ body {
 */
 main {
     display: inline-block;
-    max-width: 43%;
-    min-width: 300px;
+    width: 43%;
+    min-width: 330px;
 }
 main article {
     background-color: #fff6e0;
@@ -124,6 +124,7 @@ main footer {
     font-weight: 700;
     display: block;
     text-align: right;
+    margin-bottom: 2em;
 }
 main footer a {
     display: inline-block;
