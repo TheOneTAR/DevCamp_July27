@@ -45,13 +45,13 @@ body {
     background-color: #e23045;
     padding: .5em .75em;
     font-size: 1.125em;
-    border-radius: .25em;
+    border-radius: .16em;
 }
 .intro article {
     background-color: #1b4549;
     color: #fff6e0;
     padding: 1em .75em;
-    border-radius: .25em;
+    border-radius: .16em;
     margin-bottom: 4em;
     box-shadow: 1.875em 2.5em 0 0 #7ab3b0;
 }
@@ -62,13 +62,14 @@ body {
 */
 main {
     display: inline-block;
-    width: 43%;
-    min-width: 330px;
+    max-width: 29.25em;
+    min-width: 8.35em;
+
 }
 main article {
     background-color: #fff6e0;
     padding: .5em .75em;
-    border-radius: .25em;
+    border-radius: .16em;
     margin-bottom: .625em;
     border: 1px solid #333333;
     box-shadow: 1.875em 2.5em 0 0 #7ab3b0;
@@ -133,6 +134,6 @@ main footer a {
     background-color: #908673;
     text-align: center;
     padding: .5em .5em;
-    border-radius: .25em;
+    border-radius: .16em;
     box-shadow: .625em 1em 0 0 #d8cfbc;
 }
