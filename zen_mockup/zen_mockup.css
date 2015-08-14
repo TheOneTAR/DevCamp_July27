@@ -1,0 +1,129 @@
+@import url(http://fonts.googleapis.com/css?family=Nova+Square);
+@import url(http://fonts.googleapis.com/css?family=Work+Sans);
+
+body {
+	background-color: #eee;
+	padding: 0 100px;
+	font-size: 100%
+
+}
+
+h2, h3 {
+	font-family: 'Nova Square', cursive;
+}
+
+p, a {
+
+	font-family: 'Work Sans', sans-serif;
+}
+h1 {
+	margin: 105px 161px;
+	color:#E23045;
+	font-family: 'Nova Square', cursive;
+	font-size: 65px;
+	margin-bottom: 0;
+
+}
+
+h2 {
+	margin: 30px 157px 11px;
+	font-size: 33px;
+	background-color: #E23045;
+	border-radius: 4px;
+	text-align: left;
+	color:#FCEAD6;
+}
+
+section~h3 {
+	font-size: 25%;
+	padding-left: 4%;
+	margin-bottom: 2%; 
+	color:#FCEAD6;
+
+}
+
+
+.preamble {
+	width: 74%;
+	overflow: scroll;
+	color: #FCEAD6;
+	margin: 30px 157px 63px;
+	padding: 10px;
+	background-color: #1B4549;
+	border-radius: 4px;
+	box-shadow: 40px 30px 0 #7AB3B0;
+
+}
+
+/*.explanation, .participation {
+	padding: 22px;
+	color:black;
+	background-color:#FFF6E0;
+	width: 55%;
+	margin: 205px 157px 10;
+	border-radius: 4px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #373531;
+	box-shadow: 44px 65px 0 #7AB3B0;
+
+}*/
+
+.explanation, .participation{
+	padding: 22px;
+	color:black;
+	background-color:#FFF6E0;
+	margin: 10px 506px 2px 157px;
+	border-radius: 4px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #373531;
+	box-shadow: 44px 65px 0 #7AB3B0;
+	overflow: scroll;
+}
+
+p>a{
+	color: #E85C67;
+	text-decoration: none;
+
+}
+
+footer{
+	margin: 72px 0 0 620px;
+}
+
+footer>a{
+	padding: 5px;
+	margin: 0 2px 2px 0px;
+	border-radius: 2px;
+	color:#FFF6E0;
+	background-color: #908673;
+	text-decoration: none;
+	box-shadow: 10px 15px 0 #D8CFBC;
+	display: inline-block;
+}
+
+.resources {
+	display: none
+}
+
+li {
+	list-style: none;
+	background-color: #E23045;
+	margin: 10px 0 0 5px;
+	padding: 10px;
+	width: 30%;
+	border-radius: 1px;
+	box-shadow: 10px 15px 0 #F59581;
+
+}
+li>a {
+	text-decoration: none;
+	color: #FFF6E0;
+}
+
+aside, {
+	display: inline;
+
+}
+
