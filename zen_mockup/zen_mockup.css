@@ -1,135 +1,133 @@
 @import url(http://fonts.googleapis.com/css?family=Nova+Square);
 
+/* layout */
 body {
-    margin: 0;
-    font-family: sans-serif;
-    font-size: 12px;
-    background-color: #EEE;
-    padding: 100px 15% 0 15% ;
+  font-family: sans-serif;
+  background-color: #eee;
+  color: #000;
+  margin: 0 auto;
+  padding: 5% 20%;
+  max-width: 800px;
+/*   font-weight: 300; */
 }
-
-.page-wrapper {
-    margin: 0;
-    max-width: 1080px;
-    min-width: 768px;
-}
-
-a {
-    text-decoration: none;
-}
-
-abbr {
-    text-decoration: none;
-}
-
 h1, h2, h3 {
-    font-family: 'Nova Square', cursive;
+  font-family: 'Nova Square', cursive;
 }
-
+a {
+  color: #E00E00;
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
 h1 {
-    color: #E23045;
-    font-size: 36px;
-    margin: 20px 0;
+  font-size: 2em;
 }
-
-h2 {
-    color: #FFF6E0;
-    background-color: #E23045;
-    font-size: 18px;
-    padding: 2px;
-    border-radius: 2px;
+article {
+  border-radius: 1px;
 }
-
-h3 {
-    font-size: 14px;
+main, aside {
+  display: inline-block;
 }
-
-.header {
-    margin: 200px;
-}
-
-.preamble {
-    display: block;
-    background-color: #1B4549;
-    color: #FFF6E0;
-    padding: 16px 0 15px;
-    border-radius: 2px;
-    box-shadow: 30px 40px #7AB3B0;
-    margin-bottom: 40px;
-    min-width: 768px;
-}
-
-.preamble h3, p {
-    margin-left: 11px;
-    margin-right: 11px;
-}
-
-/* 658 */
-
-
 main {
-    display: inline-block;
-    width: 59%;
-    min-width: 400px;
-    padding: 23px 0;
+  width: 60%;
+  min-width: 300px;
 }
-
-main article {
-    background-color: #FFF6E0;
-    border: 1px solid;
-    border-radius: 2px;
-    padding: 0 14px;
-    margin-bottom: 10px;
-    box-shadow: 30px 40px #7AB3B0;
-}
-
-main a {
-    color: #E23045;
-}
-
-footer {
-    margin-top: 50px;
-    font-size: 12px;
-    text-align: right;
-}
-
-footer a {
-    background-color: #908673;
-    color: #FFF6E0;
-    padding: 3px;
-    border-radius: 1px;
-    box-shadow: 8px 10px #D8CFBC;
-}
-
 aside {
-    display: inline-block;
-    vertical-align: top;
-    width: 35%;
-    min-width: 240px;
+  vertical-align: top;
+  margin-left: 5%;
+  text-align: center;
+  width: 30%;
 }
 
-aside>div {
-    padding: 14px 0 0 60px;
+/* header "Mini CSS Zen Garden" */
+header h1 {
+  color: #E23045;
+  margin-bottom: 15px;
+}
+header h2 {
+  background-color: #E23045;
+  color: #FFF6E0;
+  font-size: ;
+  padding: 2px 5px;
+  border-radius: 1px;
 }
 
-aside h3 {
-    display: none;
+/* article "The Road to Enlightenment" */
+section article {
+  background-color: #1B4548;
+  color: #FFF6E0;
+  box-shadow: 20px 35px #7AB3B0;
+  padding: 10px 10px;
+  margin-bottom: 50px;
+}
+section article p {
+  font-weight: 100;
 }
 
+/* main "So What is This About", "Participation" */
+main article {
+  background-color: #FFF6E0;
+  box-shadow: 20px 35px #7AB3B0;
+  padding: 5px 20px;
+  border: 1px solid #000;
+}
+main article {
+  margin-bottom: 10px;
+  border-radius: 2px;
+}
+main article + article {
+  margin-bottom: 50px;
+}
+
+/* footer "HTML, CSS" tags */
+footer {
+  text-align: right;
+}
+footer a {
+  background-color: #918774;
+  color: #FFF6E0;;
+  padding: 3px 5px;
+  box-shadow: 10px 10px #D9CFBC;
+  border-radius: 1px;
+}
+
+/* aside "View This Design's CSS" */
 aside ul {
-    list-style: none;
-    padding: 0;
+  padding-left: 20px;
+  margin-top: 0;
 }
-
+aside h3 {
+  display: none;
+}
 aside a {
-    color: #FFF6E0;
+  background-color: #E23045;
+  color: #FFF6E0;
+  box-shadow: 5px 10px #F49682;
+  font-size: 0.75em;
+  padding: 5px 5px;
+  display: block;
+  width: 100%;
+  margin: 5px;
 }
 
-aside li {
+/* media queries */
+@media screen and (max-width: 800px) {
+  body {
+    padding: 5% 0;
+  }
+  main {
     display: block;
-    background-color: #E23045;
-    margin: 5px 0;
-    padding: 4px;
-    text-align: center;
-    box-shadow: 10px 14px #F59581;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  aside {
+    width: 100%;
+    margin-left: 0;
+  }
+  aside ul {
+    padding-left: 0;
+  }
 }
+
+
