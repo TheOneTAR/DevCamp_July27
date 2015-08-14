@@ -1,0 +1,113 @@
+
+
+	.note {
+		color: #735844;
+		background-color: #FFF4C9;
+		padding-left: 30px;
+		width: 300px;
+		margin: 1px; 
+		border-color: #FCD190;
+		border-radius: 50% 50%;
+		border-width: 50px 40px 50px 50px
+	}
+
+	nav+p, blockquote{
+		font-family: 'Source Sans Pro', sans-serif;
+		color: #010204; 
+		padding: 20px; 
+		margin: 20px;
+		text-align: center;
+
+	}
+
+
+	.h4{
+		color: #010204;
+		padding-left: 10px;
+		margin:1px
+		}
+
+	li {
+		font-family:'Poiret One', cursive;
+		top: 5px;
+		list-style: none;
+		width: 10%;
+		height: 10%;
+		min-width: 10pt;
+		padding-left:180pt;
+		display: inline-block
+		}
+
+	a{
+		margin: 0;
+		text-decoration: none;
+		color:#E8DDCB;
+		}
+
+	a:hover {
+    color:#036564;
+	}
+
+	nav>ul {
+		margin: 0;
+		padding: 12pt 0;
+		height: 20%;
+		width: 100%;
+		background-color:black ;
+		}
+
+	.placeholder {
+		background-color: #036564;
+		width: 100%;
+		text-align: center;
+
+	}
+
+			
+			
+
+	.ot {
+		height: 100%;
+		width: 100%;
+		background-color: black;
+    	opacity: 0.4;
+   		filter: alpha(opacity=40); /* For IE8 and earlier*/
+		}
+
+
+	div .ot h1 { 
+	text-align: center;
+	display: inline-block;
+	color: #f9f8f3;
+	font-family:'Poiret One', cursive;
+	margin: 0;
+	padding: 285px 0;
+	font-size: 100px;
+	width: 97%;
+	}
+
+	body { 
+		margin: 0;
+		background-color:#E8DDCB
+		}
+
+	.jumbotron {
+	background-image: url('testimg.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+
+	/* Set rules to fill background */
+
+  	min-height: 694px;
+  	min-width: 1000px;
+	
+  	/* Set up proportionate scaling */
+  	width: 100%;
+  	height: 100%;
+  	margin: 0;
+  	padding-bottom: 5;
+	}
+
+
+
+
