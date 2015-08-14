@@ -1,0 +1,99 @@
+@import url(http://fonts.googleapis.com/css?family=Nova+Square);
+
+
+body {
+  background-color: #EEE;
+  width: 1082px;
+  height: 1492px;
+  font-family: sans-serif;
+  color: #000;
+
+}
+
+a {
+  text-decoration: none;
+
+}
+
+
+h1, h2, h3 {
+ font-family: 'Nova Square',cursive;
+}
+
+h1 {
+  color: #E23045;
+}
+
+h2{
+  background-color: #E23045;
+  color: #FFF6E0;
+}
+
+article {
+  box-shadow: 10px 10px #7AB3B0;
+  border-radius: 1%;
+  margin: 6px 180px;
+
+
+}
+section article {
+  background-color: #1B4549;
+  color: #FFF6E0;
+  border: 2px solid black;
+  padding: 10px;
+  margin: 6px 187px
+}
+
+main article {
+  background-color: #FFF6E0;
+  border: 2px solid black;
+  padding 10px;
+
+}
+
+main a {
+  color: #E23045;
+
+}
+.wrapper {
+  list-style: none;
+
+
+  }
+aside {
+  background-color: #E23045;
+
+  box-shadow: #F59581;
+
+}
+
+aside a {
+  color: #FFF6E0;
+  list-style: none;
+
+}
+aside h3 {
+  display: none;
+
+}
+
+ul {
+  background-color: #E23045;
+  list-style: none;
+}
+
+footer {
+  text-align: center;
+}
+
+footer a{
+  font-size: 14px;
+  background-color: #908673;
+  color:#FFF6E0;
+  margin: 0 auto;
+  padding: 5px;
+  border-radius: 10%;
+  list-style: none;
+  box-shadow: 10px 10px #D8CFBC;
+
+}
