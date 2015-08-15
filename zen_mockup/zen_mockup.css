@@ -7,8 +7,7 @@ body {
   color: #000;
   margin: 0 auto;
   padding: 5% 20%;
-  max-width: 800px;
-/*   font-weight: 300; */
+  width: 70%;
 }
 h1, h2, h3 {
   font-family: 'Nova Square', cursive;
@@ -23,15 +22,14 @@ li {
 h1 {
   font-size: 2em;
 }
-article {
-  border-radius: 1px;
+article, header h2, footer a {
+  border-radius: 2px;
 }
 main, aside {
   display: inline-block;
 }
 main {
   width: 60%;
-  min-width: 300px;
 }
 aside {
   vertical-align: top;
@@ -48,18 +46,16 @@ header h1 {
 header h2 {
   background-color: #E23045;
   color: #FFF6E0;
-  font-size: ;
   padding: 2px 5px;
-  border-radius: 1px;
 }
 
 /* article "The Road to Enlightenment" */
 section article {
   background-color: #1B4548;
   color: #FFF6E0;
-  box-shadow: 20px 35px #7AB3B0;
+  box-shadow: 30px 40px #7AB3B0;
   padding: 10px 10px;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 section article p {
   font-weight: 100;
@@ -68,16 +64,13 @@ section article p {
 /* main "So What is This About", "Participation" */
 main article {
   background-color: #FFF6E0;
-  box-shadow: 20px 35px #7AB3B0;
+  box-shadow: 30px 40px #7AB3B0;
   padding: 5px 20px;
   border: 1px solid #000;
-}
-main article {
   margin-bottom: 10px;
-  border-radius: 2px;
 }
 main article + article {
-  margin-bottom: 50px;
+  margin-bottom: 55px;
 }
 
 /* footer "HTML, CSS" tags */
@@ -87,9 +80,8 @@ footer {
 footer a {
   background-color: #918774;
   color: #FFF6E0;;
-  padding: 3px 5px;
-  box-shadow: 10px 10px #D9CFBC;
-  border-radius: 1px;
+  padding: 5px 5px;
+  box-shadow: 10px 15px #D9CFBC;
 }
 
 /* aside "View This Design's CSS" */
@@ -103,8 +95,7 @@ aside h3 {
 aside a {
   background-color: #E23045;
   color: #FFF6E0;
-  box-shadow: 5px 10px #F49682;
-  font-size: 0.75em;
+  box-shadow: 10px 15px #F49682;
   padding: 5px 5px;
   display: block;
   width: 100%;
@@ -115,6 +106,9 @@ aside a {
 @media screen and (max-width: 800px) {
   body {
     padding: 5% 0;
+  }
+  article, header h2, footer a {
+    border-radius: initial;
   }
   main {
     display: block;
