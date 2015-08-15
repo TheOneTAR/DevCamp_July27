@@ -7,7 +7,9 @@ body {
   color: #000;
   margin: 0 auto;
   padding: 5% 20%;
-  width: 70%;
+  width: 75%;
+  font-size: 20px;
+  font-weight: 100;
 }
 h1, h2, h3 {
   font-family: 'Nova Square', cursive;
@@ -19,9 +21,6 @@ a {
 li {
   list-style: none;
 }
-h1 {
-  font-size: 2em;
-}
 article, header h2, footer a {
   border-radius: 2px;
 }
@@ -29,64 +28,70 @@ main, aside {
   display: inline-block;
 }
 main {
-  width: 60%;
+  width: 62%;
 }
 aside {
   vertical-align: top;
-  margin-left: 5%;
+  margin-left: 3.5%;
   text-align: center;
   width: 30%;
 }
 
-/* header "Mini CSS Zen Garden" */
-header h1 {
+
+/* header -- Mini CSS Zen Garden */
+h1 {
   color: #E23045;
-  margin-bottom: 15px;
+  margin-bottom: 14px;
+  font-size: 3em;
 }
-header h2 {
+h2 {
   background-color: #E23045;
   color: #FFF6E0;
-  padding: 2px 5px;
+  padding: 3px 5px;
 }
 
-/* article "The Road to Enlightenment" */
+
+/* article -- The Road to Enlightenment */
 section article {
   background-color: #1B4548;
   color: #FFF6E0;
-  box-shadow: 30px 40px #7AB3B0;
-  padding: 10px 10px;
-  margin-bottom: 60px;
+  box-shadow: 37px 45px #7AB3B0;
+  padding: 8px 10px;
+  margin-bottom: 72px;
 }
 section article p {
   font-weight: 100;
 }
 
-/* main "So What is This About", "Participation" */
+
+/* main -- So What is This About, Participation */
 main article {
   background-color: #FFF6E0;
-  box-shadow: 30px 40px #7AB3B0;
-  padding: 5px 20px;
+  box-shadow: 37px 45px #7AB3B0;
+  padding: 2px 20px;
   border: 1px solid #000;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 main article + article {
-  margin-bottom: 55px;
+  margin-bottom: 63px;
 }
 
-/* footer "HTML, CSS" tags */
+
+/* footer -- HTML, CSS tags */
 footer {
   text-align: right;
 }
 footer a {
   background-color: #918774;
   color: #FFF6E0;;
-  padding: 5px 5px;
-  box-shadow: 10px 15px #D9CFBC;
+  padding: 7px 10px;
+  box-shadow: 10px 19px #D9CFBC;
+  font-weight: normal;
 }
 
-/* aside "View This Design's CSS" */
+
+/* aside -- View This Design's CSS */
 aside ul {
-  padding-left: 20px;
   margin-top: 0;
 }
 aside h3 {
@@ -95,25 +100,24 @@ aside h3 {
 aside a {
   background-color: #E23045;
   color: #FFF6E0;
-  box-shadow: 10px 15px #F49682;
-  padding: 5px 5px;
+  box-shadow: 14px 21px #F49682;
+  padding: 7px 10px;
   display: block;
   width: 100%;
-  margin: 5px;
+  margin: 7px;
+  font-weight: normal;
 }
+
 
 /* media queries */
 @media screen and (max-width: 800px) {
   body {
     padding: 5% 0;
   }
-  article, header h2, footer a {
-    border-radius: initial;
-  }
   main {
     display: block;
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
   }
   aside {
     width: 100%;
@@ -121,6 +125,9 @@ aside a {
   }
   aside ul {
     padding-left: 0;
+  }
+  aside a {
+    margin-left: 0;
   }
 }
 
