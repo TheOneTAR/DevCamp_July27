@@ -24,6 +24,8 @@ h1, h2, h3 {
     font-family: 'Nova Square', cursive;
 }
 
+/* body and wrapper */
+
 body {
     margin: 0px;
     background-color: #eeeeee;
@@ -93,7 +95,7 @@ article ~ article {
 
 aside {
     display: inline-block;
-    width: 30%;
+    width: 97%;
     vertical-align: top;
     margin-top: .3125em;
     margin-left: 4em;
