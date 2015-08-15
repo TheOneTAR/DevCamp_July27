@@ -3,37 +3,55 @@
 
 body {
 	background-color: #eee;
-	padding: 0 100px;
-	font-size: 100%
-
+	font-size: 100%;
 }
+/*Making everything a differnt font*/
 
-h2, h3 {
+h2, h3 , h1{
 	font-family: 'Nova Square', cursive;
 }
 
-p, a {
-
+/*changing fonts*/
+p, a{
 	font-family: 'Work Sans', sans-serif;
 }
+/*for every link with an immediate parent of p change color and get rid of underline*/
+p>a, {
+	color: #E85C67;
+	text-decoration: none;
+}
+/*changing color and width for the first header*/
+
 h1 {
-	margin: 105px 161px;
+	margin: 3% 18%;
 	color:#E23045;
-	font-family: 'Nova Square', cursive;
 	font-size: 65px;
 	margin-bottom: 0;
+	min-width: 637px;
 
 }
 
+@media only screen and (max-width: 1200px){
+    h1 {
+        font-size: 36px;
+    }
+}
+
+/*Changing the width adding and background color to the second header*/
 h2 {
-	margin: 30px 157px 11px;
+	width: 63%;
+	margin: 1% 19% 10px 18%;
 	font-size: 33px;
 	background-color: #E23045;
 	border-radius: 4px;
 	text-align: left;
 	color:#FCEAD6;
+	min-width: 637px;
+	padding:0 2px;
+
 }
 
+/*changing the color and size for the third header that's preceded by a div*/
 section~h3 {
 	font-size: 25%;
 	padding-left: 4%;
@@ -42,88 +60,106 @@ section~h3 {
 
 }
 
-
-.preamble {
-	width: 74%;
+/*The first header*/
+section article {
+	width: 62%;
 	overflow: scroll;
 	color: #FCEAD6;
-	margin: 30px 157px 63px;
-	padding: 10px;
+	margin: 1% 2% 7% 18%;
+	padding: 12px;
 	background-color: #1B4549;
 	border-radius: 4px;
 	box-shadow: 40px 30px 0 #7AB3B0;
+	min-width: 637px
 
 }
 
-/*.explanation, .participation {
+/*making the article in main a in-lineblock and changing the color/size*/
+main article{
+	display: inline-block;
 	padding: 22px;
 	color:black;
 	background-color:#FFF6E0;
-	width: 55%;
-	margin: 205px 157px 10;
+	margin: -41px 35% 10% 55%;
 	border-radius: 4px;
 	border-style: solid;
 	border-width: 1px;
 	border-color: #373531;
-	box-shadow: 44px 65px 0 #7AB3B0;
-
-}*/
-
-.explanation, .participation{
-	padding: 22px;
-	color:black;
-	background-color:#FFF6E0;
-	margin: 10px 506px 2px 157px;
-	border-radius: 4px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #373531;
-	box-shadow: 44px 65px 0 #7AB3B0;
+	box-shadow: 44px 37px 0 #7AB3B0;
 	overflow: scroll;
+	min-width: 377px;
+}
+/*change the second article in man to be in-lineblock and adding shit*/
+.participation{
+	padding: 22px;
+	color:black;
+	background-color:#FFF6E0;
+	margin: -41px 35% 5% 55%;
+	border-radius: 4px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #373531;
+	box-shadow: 44px 37px 0 #7AB3B0;
+	overflow: scroll;
+	min-width: 377px;
 }
 
-p>a{
-	color: #E85C67;
-	text-decoration: none;
-
-}
-
-footer{
-	margin: 72px 0 0 620px;
-}
-
+/*this is the thing with the html and css links*/
 footer>a{
 	padding: 5px;
-	margin: 0 2px 2px 0px;
+	margin: 20px -40px 1px 9%;
 	border-radius: 2px;
 	color:#FFF6E0;
 	background-color: #908673;
 	text-decoration: none;
 	box-shadow: 10px 15px 0 #D8CFBC;
-	display: inline-block;
-}
 
-.resources {
-	display: none
 }
-
-li {
+ul>li{
 	list-style: none;
+	
+	border-radius: 1px 1px 1px 1px;
+}
+/*sidebar header*/
+.resources{
+	display: none;
+}
+/*links*/
+a{
+	text-decoration: none;
+}
+/*links*/
+li>a {
+	color:#FFF6E0;
 	background-color: #E23045;
-	margin: 10px 0 0 5px;
 	padding: 10px;
-	width: 30%;
-	border-radius: 1px;
+	border-radius: 1px 1px 1px 1px;
 	box-shadow: 10px 15px 0 #F59581;
 
 }
-li>a {
-	text-decoration: none;
-	color: #FFF6E0;
+
+aside{
+	text-align: center;
+	vertical-align: top;
+	display: inline-block;
+    margin-top: -47px;
+    margin-left: 247px;
+
+
+
 }
 
-aside, {
-	display: inline;
+aside li{
+	margin-bottom: 24px;
 
 }
+
+main {
+    display: inline-block;
+    max-width: 29.25em;
+    min-width: 8.35em;
+}
+
+
+
 
