@@ -68,7 +68,7 @@ section article {
 	width: 62%;
 	overflow: scroll;
 	color: #FCEAD6;
-	margin: 1% 2% 7% 18%;
+	margin: 1% 2% 8% 18%;
 	padding: 12px;
 	background-color: #1B4549;
 	border-radius: 4px;
@@ -83,7 +83,7 @@ main article{
 	padding: 22px;
 	color:black;
 	background-color:#FFF6E0;
-	margin: -70px 48% 37% 119%;
+	margin: -70px 48% 37% 96%;
 	border-radius: 4px;
 	border-style: solid;
 	border-width: 1px;
@@ -92,12 +92,12 @@ main article{
 	overflow: scroll;
 	min-width: 377px;
 }
-/*change the second article in man to be in-lineblock and adding shit*/
+/**/
 .participation{
 	padding: 22px;
 	color:black;
 	background-color:#FFF6E0;
-	margin: -70px 48% 25% 119%;
+	margin-top: -70px;
 	border-radius: 4px;
 	border-style: solid;
 	border-width: 1px;
@@ -154,8 +154,8 @@ li>a {
 main{
   display: inline-block;
   width: 200px;
-  height: 100px;
-  margin: 1em;
+  height: 100px;/*
+  margin: 1em;*/
 }
 
 
@@ -187,8 +187,8 @@ aside{
 	text-align: center;
 	vertical-align: top;
 	display: inline-block;
-    margin-top: -47px;
-    margin-left: 247px;
+    margin-top: -47px;/*
+    margin-left: 247px;*/
 
 
 
@@ -200,11 +200,18 @@ aside li{
 }
 
 main {
-    display: inline-block;
+    display: inline-block;/*
     max-width: 29.25em;
-    min-width: 8.35em;
+    min-width: 8.35em;*/
 }
 
 
+.page-wrapper {
+    margin-left: 10.5%;
+    margin-right: 14.5%;
+    margin-top: 7.8%;
+    margin-bottom: 6.5em;
+    min-width: 1000px
+}
 
 
