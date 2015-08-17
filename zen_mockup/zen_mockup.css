@@ -1,0 +1,140 @@
+/* 
+ * 
+ * CSS for Mini Zen Mock-Up. 
+ * 
+ * This is one solution.
+ *
+ */
+
+@import url(http://fonts.googleapis.com/css?family=Nova+Square);
+
+
+ html {
+   margin: 0;
+   padding: 0;
+ }
+
+ body {
+   background-color: #eee;
+   font-family: sans-serif;
+
+ }
+
+.page-wrapper {
+   margin: 2% 10% 10%;
+   
+}
+
+/* Top paragraphs and headers */
+
+h1 {
+   font-size: 3em;
+   color: #E23045;
+   margin-bottom: 20px;
+}
+
+h2 {
+   background-color: #E23045;
+   margin-top: 0;
+   border-radius: 2px;
+   padding: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   font-family: 'Nova Square', cursive;
+}
+
+.intro {
+   padding: 5%;
+   color: #FFF6E0;
+   margin-bottom: 20px;
+}
+
+.preamble {
+   background-color: #1B4549;
+   padding: 10px 10px;
+   box-shadow: 30px 40px 0 0 #7AB3B0;
+}
+
+/* Main content area styling. */
+
+.main, aside {
+   display: inline-block;
+   vertical-align: top;
+}
+
+.main {
+   padding-left: 5%;
+   margin: 0;
+   width: 55%;
+   
+}
+
+article {
+   border-radius: 2px;
+}
+
+.main article a {
+   color: #E23045;
+   text-decoration: none;
+}
+
+.main article {
+   min-width: 300px;
+   border-radius: 2px;
+   padding: 0 20px;
+   margin-bottom: 10px;
+   border: 1px #333 solid;
+   background-color: #FFF6E0;
+   box-shadow: 30px 40px 0 0 #7AB3B0;
+}
+
+/* Sidebar nav styles */
+
+.sidebar {
+   width: 30%;
+   border-radius: 2px;
+   margin-left: 10px;
+   padding: 0 10px;
+   color: #FFF6E0;
+}
+
+.sidebar ul {
+   list-style: none;
+   margin: 0;
+}
+
+.resources {
+   display: none;
+}
+
+ul > li {
+   margin: 5px 0;
+   background-color: #E23045;
+   text-align: center;
+   padding: 5px 0; 
+   box-shadow: 10px 15px 0 0 #F59581;
+
+}
+
+li > a {
+   text-decoration: none;
+   color: #FFF6E0;
+}
+
+/* Footer link styles */
+
+footer a {
+   color: #FFF6E0;
+   text-decoration: none;
+   display: inline-block;
+   background-color: #908673;
+   padding: 5px;
+   border-radius: 2px;
+   box-shadow: 10px 15px 0 0 #D8CFBC;
+}
+
+footer {
+   margin-top: 50px;
+   text-align: right;
+}
