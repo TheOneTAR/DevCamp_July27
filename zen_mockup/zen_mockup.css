@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Nova+Square);
 @import url(http://fonts.googleapis.com/css?family=Work+Sans);
 
-body {
+body{
 	background-color: #eee;
 	font-size: 100%;
 }
@@ -17,13 +17,13 @@ p, a{
 }
 
 /*for every link with an immediate parent of p change color and get rid of underline*/
-p>a {
+p>a{
 	color: #E12E43;
 	text-decoration: none;
 }
 
 /*changing color and width for the first header*/
-h1 {
+h1{
 	margin: 3% 18%;
 	color:#E23045;
 	font-size: 65px;
@@ -43,7 +43,7 @@ h1 {
 }
 
 /*Changing the width adding and background color to the second header*/
-h2 {
+h2{
 	width: 63%;
 	margin: 1% 19% 10px 18%;
 	font-size: 33px;
@@ -57,7 +57,7 @@ h2 {
 }
 
 /*changing the color and size for the third header that's preceded by a div*/
-section~h3 {
+section~h3{
 	font-size: 25%;
 	padding-left: 4%;
 	margin-bottom: 2%; 
@@ -66,7 +66,7 @@ section~h3 {
 }
 
 /*The first article*/
-section article {
+section article{
 	width: 62%;
 	overflow: scroll;
 	color: #FCEAD6;
@@ -118,7 +118,7 @@ footer>a{
 
 
 /*Placement of links, color and shadow*/
-li {
+li{
 	vertical-align: top;
 	display: inline-block;
 	list-style: none;
@@ -131,7 +131,7 @@ li {
 }
 
 /*Getting rid of underline and changing the colors of the links*/
-li>a {
+li>a{
 	text-decoration: none;
 	color: #FFF6E0;
 }
@@ -163,7 +163,7 @@ aside li{
 }
 
 /*Making the page be able to shrink and adding a min width*/
-.page-wrapper {
+.page-wrapper{
     margin-left: 11.5%;
     margin-right: 14.5%;
     margin-top: 7.8%;
