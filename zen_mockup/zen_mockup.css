@@ -1,17 +1,17 @@
 @import url(http://fonts.googleapis.com/css?family=Nova+Square);
 
 body {
-    max-width: 1080px;
-    min-width: 768px;
     margin: 0;
     font-family: sans-serif;
     font-size: 12px;
     background-color: #EEE;
-    padding-top: 100px;
+    padding: 100px 15% 0 15% ;
 }
 
 .page-wrapper {
-    margin: 0 15%;
+    margin: 0;
+    max-width: 1080px;
+    min-width: 768px;
 }
 
 a {
@@ -49,12 +49,19 @@ h3 {
 }
 
 .preamble {
+    display: block;
     background-color: #1B4549;
     color: #FFF6E0;
-    padding: 16px 11px 15px;
+    padding: 16px 0 15px;
     border-radius: 2px;
     box-shadow: 30px 40px #7AB3B0;
     margin-bottom: 40px;
+    min-width: 768px;
+}
+
+.preamble h3, p {
+    margin-left: 11px;
+    margin-right: 11px;
 }
 
 /* 658 */
@@ -97,7 +104,7 @@ footer a {
 aside {
     display: inline-block;
     vertical-align: top;
-    width: auto;
+    width: 35%;
     min-width: 240px;
 }
 
