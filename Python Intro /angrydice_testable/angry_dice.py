@@ -49,7 +49,7 @@ class AngryDiceGame:
       input("Press ENTER to start!")
 
       # Check to see if we advance in stage
-      self.stages[self.current_stage-1]()
+      self.check_stage()
 
       #Show inital state of the game
       self.print_dice()
