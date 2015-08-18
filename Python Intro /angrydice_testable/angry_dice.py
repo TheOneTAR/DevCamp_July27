@@ -19,6 +19,11 @@ class AngryDie(Die):
       self.value = AngryDie.ANGRY_VALUES[self.currentValue]
       return self.currentValue
 
+   def setDieFaceValue(self, faceValue):
+      if faceValue in AngryDie.ANGRY_VALUES:
+         self.currentValue = faceValue
+         self.value = AngryDie.ANGRY_VALUES[faceValue]
+
 
 class AngryDiceGame:
    """An Angry Dice Game that allows a single player to play Angry Dice."""
@@ -26,7 +31,6 @@ class AngryDiceGame:
    def __init__(self):
       self.die_a = AngryDie()
       self.die_b = AngryDie()
-      self.stages = [self.check_stage1,self.check_stage2,self.check_stage3]
       self.cheating = False
       self.current_stage = 1
 
@@ -64,7 +68,7 @@ class AngryDiceGame:
          self.check_angry()
 
          # Check to see if we advance in stage
-         self.stages[self.current_stage-1]()
+         self.check_stage()
 
          # Print the dice
          self.print_dice()
@@ -85,7 +89,6 @@ class AngryDiceGame:
 
    def determine_roll(self):
       """Prompt the user for input, and return the dice they want to roll."""
-
       dice_to_roll = []
       to_roll = input("Roll dice: ")
       if 'a' in to_roll:
@@ -96,20 +99,22 @@ class AngryDiceGame:
 
       return dice_to_roll
 
-   def check_stage1(self):
-      # Do what needs to be done to get us to... STAGE 2
-      if self.die_a.value + self.die_b.value == 3 and not self.cheating:
-         self.current_stage = 2
+   def check_stage(self):
+      #Initalize target and goal_stage to stage1 values
+      target = 3
+      goal_stage = 2
 
-   def check_stage2(self):
-      # Do what needs to be done to get us to... STAGE 3
-      if self.die_a.value + self.die_b.value == 7 and not self.cheating:
-         self.current_stage = 3
+      # Set target and goal_stage if current stage is not 1
+      if self.current_stage == 2:
+         target = 7
+         goal_stage = 3
+      elif self.current_stage == 3:
+         target = 11
+         goal_stage = 4
 
-   def check_stage3(self):
-      # Do what needs to be done to get us to... VICTORY
-      if self.die_a.value + self.die_b.value == 11 and not self.cheating:
-         self.current_stage = 4
+      # Check the stage goals
+      if self.die_a.value + self.die_b.value == target and not self.cheating:
+         self.current_stage = goal_stage
 
    def check_angry(self):
       """Checks to see if both dice are Angry, if so, sets current_stage to 1"""
