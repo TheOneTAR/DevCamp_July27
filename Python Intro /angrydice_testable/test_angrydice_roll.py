@@ -11,8 +11,6 @@ class DieRollTest(unittest.TestCase):
         self.possible_values = [1, 2, 3, "Dog", "Cat", "Hippo"]
         self.new_die = Die(self.possible_values)
 
-        print(self.shortDescription())
-
     def tearDown(self):
         del self.possible_values
         del self.new_die
