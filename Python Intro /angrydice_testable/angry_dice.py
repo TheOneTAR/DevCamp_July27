@@ -26,13 +26,11 @@ class AngryDiceGame:
    def __init__(self):
       self.die_a = AngryDie()
       self.die_b = AngryDie()
-      self.stages = [self.stage1,self.stage2,self.stage3]
+      self.stages = [self.check_stage1,self.check_stage2,self.check_stage3]
       self.cheating = False
-      self.current_stage = 0
+      self.current_stage = 1
 
-      self.angry_start()
-
-   def angry_start(self):
+   def main(self):
       text = "Welcome to Angry Dice! Roll the two dice until you get thru the 3 Stages!\n"
       text += "Stage 1 you need to roll 1 & 2\n"
       text += "Stage 2 you need to roll ANGRY & 4\n"
@@ -46,100 +44,95 @@ class AngryDiceGame:
       print(text)
       input("Press ENTER to start!")
 
-      while self.current_stage != 3:
-         print(self.current_stage)
-         self.stages[self.current_stage]()
+      # Check to see if we advance in stage
+      self.stages[self.current_stage-1]()
 
+      #Show inital state of the game
+      self.print_dice()
+
+      while self.current_stage != 4:
+         # Prompt user what to reroll
+         dice = self.determine_roll()
+
+         # Check for cheating
+         self.check_cheating(dice)
+
+         # Roll the dice
+         self.roll_the_dice(dice)
+
+         # Check for ANGRY
+         self.check_angry()
+
+         # Check to see if we advance in stage
+         self.stages[self.current_stage-1]()
+
+         # Print the dice
+         self.print_dice()
+
+
+      # Congratulate them on winning
       print("You've won! Calm down!")
 
    def roll_the_dice(self, dice):
-      for die in dice:
-         die.roll()
+      if type(dice) == list:
+         for die in dice:
+            die.roll()
 
    def print_dice(self):
+      stage_to_print = 3 if self.current_stage == 4 else self.current_stage
       print("You rolled:\n   a = [  {}  ]\n   b = [  {}  ]\n\nYou are in Stage {}"
-         .format(self.die_a, self.die_b, self.current_stage))
+         .format(self.die_a, self.die_b, stage_to_print))
 
-   def what_to_roll(self):
-      return input("Hold on a minute")
+   def determine_roll(self):
+      """Prompt the user for input, and return the dice they want to roll."""
 
-   def do_things(self, dice):
-      # Roll the dice
-      self.roll_the_dice(dice)
-      self.print_dice()
+      dice_to_roll = []
+      to_roll = input("Roll dice: ")
+      if 'a' in to_roll:
+         dice_to_roll.append(self.die_a)
 
-      print(self.current_stage)
-      # Check for ANGRY
-      if self.check_angry():
-         self.current_stage = -1
-         return False
-      # Prompt user what to reroll
-      dice = self.what_to_roll()
+      if 'b' in to_roll:
+         dice_to_roll.append(self.die_b)
 
-      # Check for cheating
-      self.check_cheating(dice)
-      return True
+      return dice_to_roll
 
-   def stage1(self):
-      dice = [self.die_a, self.die_b]
+   def check_stage1(self):
       # Do what needs to be done to get us to... STAGE 2
-      while self.die_a.value + self.die_b.value != 3 and not self.cheating:
-         if not self.do_things(dice):
-            break
+      if self.die_a.value + self.die_b.value == 3 and not self.cheating:
+         self.current_stage = 2
 
-      self.current_stage += 1
-
-   def stage2(self):
-
-      dice = [self.die_a, self.die_b]
+   def check_stage2(self):
       # Do what needs to be done to get us to... STAGE 3
-      while self.die_a.value + self.die_b.value != 7 and not self.cheating:
-         if not self.do_things(dice):
-            break
-      self.current_stage += 1
+      if self.die_a.value + self.die_b.value == 7 and not self.cheating:
+         self.current_stage = 3
 
-   def stage3(self):
-
-      dice = [self.die_a, self.die_b]
+   def check_stage3(self):
       # Do what needs to be done to get us to... VICTORY
-      while self.die_a.value + self.die_b.value != 11 and not self.cheating:
-         if not self.do_things(dice):
-            break
-      self.current_stage += 1
+      if self.die_a.value + self.die_b.value == 11 and not self.cheating:
+         self.current_stage = 4
 
-      
    def check_angry(self):
+      """Checks to see if both dice are Angry, if so, sets current_stage to 1"""
       if self.die_a.value == 3 and self.die_b.value == 3:
          print("WOW, you're ANGRY!\nTime to go back to Stage 1!")
-         return True
-      return False
+         self.current_stage = 1
+
 
    def check_cheating(self, dice):
-      #Stage 1, they can only hold a 1 or 2
-      if self.current_stage == 0:
-         if self.die_a not in dice and (die_a.value != 1 or die_a != 2):
-            self.cheating = True
-         elif self.die_b not in dice and (die_b.value != 1 or die_b != 2):
-            self.cheating = True
-         else:
-            self.cheating = False
-      #stage 2, they can only hold a 4 or 3
-      if self.current_stage == 1:
-         if self.die_a not in dice and (die_a.value != 3 or die_a != 4):
-            self.cheating = True
-         elif self.die_b not in dice and (die_b.value != 3 or die_b != 4):
-            self.cheating = True
-         else:
-            self.cheating = False
       #Stage 3, they can only hold a 5
-      if self.current_stage == 2:
-         if self.die_a not in dice and (die_a.value != 5):
+      if self.current_stage == 3:
+         if self.die_a not in dice and (self.die_a.value == 6):
+            print("You're cheating! You cannot lock a 6! You cannot win "
+                  "until you reroll it!")
             self.cheating = True
-         elif self.die_b not in dice and (die_b.value != 5):
+         elif self.die_b not in dice and (self.die_b.value == 6):
+            print("You're cheating! You cannot lock a 6! You cannot win "
+                  "until you reroll it!")
             self.cheating = True
-         else:
-            self.cheating = False
+
+      self.cheating = False
 
 
 if __name__ == '__main__':
-  game = AngryDiceGame()
+   game = AngryDiceGame()
+   game.main()

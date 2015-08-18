@@ -20,7 +20,7 @@
    - for loops
 
 - Maze
-   - functions
+   - functions – NEED TO SPEND MORE TIME ON THIS
    - stack
    - return vs print
    - while loops
@@ -61,3 +61,26 @@
 - blackjack/21 game (pair programming, Lab)
    - Subclasses
    - repr
+
+- HTML base structures (8/7/15)
+   - article
+   - section
+   - p
+   - lists
+   - img
+   - footer
+   - header
+   - nav
+(8/10/15) 
+- Python excercise (make a generic Die class)
+- HTML Practice
+   - introduce blockquote
+   - have them build a 2002 Facebook for themselves
+- HTML colors
+   - Have them add color to their web pages
+- HTML Fonts
+   - Have them set custom font styles
+- List Styles
+   - Show them how to change the list style
+   - Have them make a navigation section using lists
+   

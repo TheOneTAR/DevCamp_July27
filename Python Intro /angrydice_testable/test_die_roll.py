@@ -28,8 +28,6 @@ class DieRollTest(unittest.TestCase):
         holding_value = self.new_die.roll()
         for i in range(10):
             if self.new_die.roll() != holding_value:
-                print("Rolled Die value {} is different than Holding Value {}"
-                        .format(self.new_die.currentValue, holding_value))
                 self.assertTrue(True)
                 return
 
