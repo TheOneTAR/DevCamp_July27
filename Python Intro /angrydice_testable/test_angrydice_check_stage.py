@@ -9,6 +9,9 @@ class AngryDiceStageCheckTest(unittest.TestCase):
     def setUp(self):
         self.angry_game = AngryDiceGame()
 
+    def tearDown(self):
+        del self.angry_game
+
     def test_stage_one_to_stage_two_valid_inputs(self):
         self.angry_game.die_a.setDieFaceValue("1")
         self.angry_game.die_b.setDieFaceValue("2")
