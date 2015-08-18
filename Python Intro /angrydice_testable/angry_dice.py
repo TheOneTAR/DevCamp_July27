@@ -125,6 +125,10 @@ class AngryDiceGame:
 
    def check_cheating(self, dice):
       #Stage 3, they can only hold a 5
+
+      #Assume they're not cheating until proven guilty
+      self.cheating = False
+
       if self.current_stage == 3:
          if self.die_a not in dice and (self.die_a.value == 6):
             print("You're cheating! You cannot lock a 6! You cannot win "
@@ -135,7 +139,7 @@ class AngryDiceGame:
                   "until you reroll it!")
             self.cheating = True
 
-      self.cheating = False
+
 
 
 if __name__ == '__main__':
