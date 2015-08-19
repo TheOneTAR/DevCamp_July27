@@ -15,11 +15,19 @@ class AngryDie(Die):
       self.value = AngryDie.ANGRY_VALUES[self.currentValue]
 
    def roll(self):
+      """ Overrides Die.roll() so that in addition to
+      rolling the dice, it sets the die's value based on
+      the currentValue.
+      """
       self.currentValue = choice(self.possibleValues)
       self.value = AngryDie.ANGRY_VALUES[self.currentValue]
       return self.currentValue
 
    def setDieFaceValue(self, faceValue):
+      """ A helper method that, given a valid faceValue,
+       will update the die's currentValue and value to match
+       the passed faceValue.
+       """
       if faceValue in AngryDie.ANGRY_VALUES:
          self.currentValue = faceValue
          self.value = AngryDie.ANGRY_VALUES[faceValue]
@@ -35,16 +43,21 @@ class AngryDiceGame:
       self.current_stage = 1
 
    def main(self):
-      text = "Welcome to Angry Dice! Roll the two dice until you get thru the 3 Stages!\n"
-      text += "Stage 1 you need to roll 1 & 2\n"
-      text += "Stage 2 you need to roll ANGRY & 4\n"
-      text += "Stage 3 you need to roll 5 & 6\n"
-      text += "You can lock a die needed for your current stage \n"
-      text += "and just roll the other one, but beware!\n"
-      text += "If you ever get 2 ANGRY's at once, you have to restart to Stage 1!\n"
-      text += "Also, you can never lock a 6! That's cheating!\n\n"
-      text += "To roll the dice, simply input the name of the die you want to roll.\n"
-      text += "Their names are a and b.\n"
+      """ Drive the Angry Dice game for the user.
+      Welcomes them to the game and prints the instructions,
+      then prompts them with the die values and what they want to roll
+      until they advance through all the stages and win."""
+
+      text = "Welcome to Angry Dice! Roll the two dice until you get thru the 3 Stages!\n" \
+             "Stage 1 you need to roll 1 & 2\n" \
+             "Stage 2 you need to roll ANGRY & 4\n" \
+             "Stage 3 you need to roll 5 & 6\n" \
+             "You can lock a die needed for your current stage \n" \
+             "and just roll the other one, but beware!\n" \
+             "If you ever get 2 ANGRY's at once, you have to restart to Stage 1!\n" \
+             "Also, you can never lock a 6! That's cheating!\n\n" \
+             "To roll the dice, simply input the name of the die you want to roll.\n" \
+             "Their names are a and b.\n"
       print(text)
       input("Press ENTER to start!")
 
@@ -78,11 +91,14 @@ class AngryDiceGame:
       print("You've won! Calm down!")
 
    def roll_the_dice(self, dice):
+      """ Roll the dice passed in the list."""
       if type(dice) == list:
          for die in dice:
             die.roll()
 
    def print_dice(self):
+      """ Print both die values, as well as the current stage."""
+
       stage_to_print = 3 if self.current_stage == 4 else self.current_stage
       print("You rolled:\n   a = [  {}  ]\n   b = [  {}  ]\n\nYou are in Stage {}"
          .format(self.die_a, self.die_b, stage_to_print))
@@ -100,6 +116,10 @@ class AngryDiceGame:
       return dice_to_roll
 
    def check_stage(self):
+      """ Check the state of the game and if conditions are met to
+      advance the player to the next stage.
+      """
+
       #Initalize target and goal_stage to stage1 values
       target = 3
       goal_stage = 2
@@ -123,8 +143,11 @@ class AngryDiceGame:
          self.current_stage = 1
 
 
-   def check_cheating(self, dice):
-      #Stage 3, they can only hold a 5
+   def check_cheating(self, dice=[]):
+      """" In Stage 3, they can only hold a 5 valued die.
+      If they hold a 6, they'll be found cheating and thus,
+      cannot win, or advance to the next stage.
+      """
 
       #Assume they're not cheating until proven guilty
       self.cheating = False
