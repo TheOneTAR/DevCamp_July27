@@ -30,21 +30,20 @@ class Connect4GetPlayerNameTest(unittest.TestCase):
 
     @patch('builtins.input', return_value=long_name)
     @patch('sys.stdout', new_callable=StringIO)
-    def test_long_name(self, input, output):
+    def test_long_name(self, output, inputted_value):
         """Ensure that the view will return a more reasonably sized name."""
         name = self.view.get_player_name()
 
         long_name_error = "Wow, that's an impressive name. " \
-                          "How about we call you Lorem? Hi, Lorem!"
+                          "How about we call you Lorem? Hi, Lorem!\n"
 
-        self.assertEqual(output.getvalue(),long_name_error,
+        self.assertEqual(output.getvalue(), long_name_error,
                          "The long name was not shortened")
         if len(name) > 20:
-            self.assertTrue(False,"The name is still too long.")
+            self.assertTrue(False, "The name is still too long.")
             return
 
         self.assertIn(name, long_name)
-
 
 
 if __name__ == '__main__':

@@ -28,7 +28,7 @@ class Connect4GetPlayerMoveTest(unittest.TestCase):
 
     @patch('builtins.input', return_value="3")
     @patch('sys.stdout', new_callable=StringIO)
-    def test_with_message(self, inputted_value, output):
+    def test_with_message(self, output, inputted_value):
         """
         Ensures that the view correctly handles a passed in message.
         :param inputted_value: string passed in by mock.patch
@@ -45,7 +45,7 @@ class Connect4GetPlayerMoveTest(unittest.TestCase):
 
     @patch('builtins.input', side_effect=["", "4"])
     @patch('sys.stdout', new_callable=StringIO)
-    def test_with_no_response(self, inputted_value, output):
+    def test_with_no_response(self, output, inputted_value):
         """
         Ensures that the view will reject an empty string as a move
         and press for a new answer.
