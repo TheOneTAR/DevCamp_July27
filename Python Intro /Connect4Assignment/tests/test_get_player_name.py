@@ -1,0 +1,43 @@
+__author__ = 'TheOneTAR'
+
+import unittest
+from connect4_view import View
+from unittest.mock import patch
+
+long_name = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."\
+            "Pellentesque mi nibh, iaculis molestie neque eget, faucibus "\
+            "interdum leo. Sed viverra ipsum urna, eget placerat tellus "\
+            "hendrerit a. Fusce et ligula vitae ligula facilisis tempus sit"\
+            "amet ut lacus. Nulla non tellus id arcu pharetra euismod."\
+            "Praesent congue urna ac ornare porttitor."
+
+
+class Connect4GetPlayerNameTest(unittest.TestCase):
+    """Test the Get Player Name prompt from the View"""
+
+    def setUp(self):
+        self.view = View()
+
+    def tearDown(self):
+        del self.view
+
+    @patch('builtins.input', return_value='Rob-E')
+    def test_normal_name(self, input):
+        """Ensure that the view will return a string that is input."""
+        name = self.view.get_player_name()
+        self.assertEqual(name, 'Rob-E')
+
+    @patch('builtins.input', return_value=long_name)
+    def test_long_name(self, input):
+        """Ensure that the view will return a more reasonably sized name."""
+        name = self.view.get_player_name()
+        if len(name) > 20:
+            self.assertTrue(False,"The name is still too long.")
+            return
+
+        self.assertIn(name, long_name)
+
+
+
+if __name__ == '__main__':
+    unittest.main()

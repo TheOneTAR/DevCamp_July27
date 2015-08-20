@@ -62,3 +62,9 @@ if __name__ == '__main__':
     os.system('cls' if os.name == 'nt' else 'clear')
     print()
     drop_piece((-6,2),(-1,2),None,raw_board)
+
+    drop_piece((-6,3),(-1,3),None,raw_board,"X")
+
+    drop_piece((-5,3),(-1,3),None,raw_board)
+
+    drop_piece((-6,4),(-1,4),None,raw_board,"X")
