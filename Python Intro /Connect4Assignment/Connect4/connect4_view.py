@@ -4,7 +4,7 @@ from random import choice
 
 
 class View:
-    """STWINGS"""
+    """Communicates with the user as a proxy for the Controller"""
 
     def get_player_name(self):
         """
