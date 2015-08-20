@@ -28,13 +28,27 @@ class Connect4GetPlayerNameTest(unittest.TestCase):
         name = self.view.get_player_name()
         self.assertEqual(name, 'Rob-E')
 
+    @patch('builtins.input', return_value='')
+    @patch('sys.stdout', new_callable=StringIO)
+    def test_no_name(self, output, inputted_value):
+        """
+
+        :param output:
+        :param inputted_value:
+        :return:
+        """
+        with open('bin/names.txt') as f:
+            names = [line.rstrip() for line in f]
+        name = self.view.get_player_name()
+        self.assertIn(name, names, "Random name generation failed")
+
     @patch('builtins.input', return_value=long_name)
     @patch('sys.stdout', new_callable=StringIO)
     def test_long_name(self, output, inputted_value):
         """Ensure that the view will return a more reasonably sized name."""
         name = self.view.get_player_name()
 
-        long_name_error = "Wow, that's an impressive name. " \
+        long_name_error = "Wow, that's an impressive name.\n" \
                           "How about we call you Lorem? Hi, Lorem!\n"
 
         self.assertEqual(output.getvalue(), long_name_error,
@@ -44,7 +58,6 @@ class Connect4GetPlayerNameTest(unittest.TestCase):
             return
 
         self.assertIn(name, long_name)
-
 
 
 if __name__ == '__main__':

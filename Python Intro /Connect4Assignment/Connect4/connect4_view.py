@@ -1,5 +1,7 @@
 __author__ = 'joecken'
 
+from random import choice
+
 
 class View:
     """STWINGS"""
@@ -10,12 +12,16 @@ class View:
         :return: A string of between 1 and 20 characters
         """
         name = input("Who you be?")
-        if len(name) > 20:
-            name = name.split()[0]
+        if len(name) > 20 or not name:
             if len(name) > 20:
-                name = name[0:20]
-            print("Wow, that's an impressive name. "
-                  "How about we call you {}? Hi, {}!"
+                name = name.split()[0][0:20]
+                print("Wow, that's an impressive name.")
+            else:
+                with open('bin/names.txt') as f:
+                    names = [line.rstrip() for line in f]
+                name = choice(names)
+                print("You don't care at all?")
+            print("How about we call you {}? Hi, {}!"
                   .format(name, name))
         return name
 
