@@ -45,3 +45,38 @@ class View:
                 print("Please type only an integer from 1 to 7.")
                 move = ""
         return move
+
+    def show_instructions(self):
+        """
+        Print the instructions of how to play onto the screen.
+        """
+        instructions = "Let's play Connect 4! The first player to connect 4" \
+                       "tokens of their color vertically, horizontally, " \
+                       "or diagonally, wins. Players will alternate turns " \
+                       "dropping checkers into the board, trying their " \
+                       "best to win.\n\nOn a player's turn, they will be " \
+                       "prompted to enter the column they want their piece " \
+                       "dropped into."
+
+        print(instructions)
+
+    def declare_sadness(self):
+        """
+        Called when there's a tie to inform the players of how
+        sad they should be.
+        """
+        sadness = "Well, you both should be filled with an immense sadness," \
+                  " as there is no winner. You have tied."
+        print(sadness)
+
+    def declare_awesome(self, player_name):
+        """
+        Called when there is a winner to declare how
+        awesome that player is.
+        :param player_name: name of the winning player
+        :return: None
+        """
+        awesome = "Woo! Who's awesome? {}'s AWESOME, cause {} won!!"\
+                  .format(player_name, player_name)
+
+        print(awesome)
