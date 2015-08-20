@@ -21,7 +21,7 @@ class Connect4GetPlayerMoveTest(unittest.TestCase):
         """
         Ensures that the view correctly handles a standard move input.
         :param inputted_value: string passed in by mock.patch
-        :return: NoneType
+        :return: Returns None
         """
         return_value = self.view.get_player_move()
         self.assertEqual(return_value, 1, "get_player_move should return 1")
@@ -33,7 +33,7 @@ class Connect4GetPlayerMoveTest(unittest.TestCase):
         Ensures that the view correctly handles a passed in message.
         :param inputted_value: string passed in by mock.patch
         :param output: string printed to stdout by the function
-        :return: NoneType
+        :return: Returns None
         """
         return_value = self.view.get_player_move(msg="Not so much.")
         self.assertEqual(
@@ -51,7 +51,7 @@ class Connect4GetPlayerMoveTest(unittest.TestCase):
         and press for a new answer.
         :param inputted_value: strings passed in by mock.patch
         :param output: strings printed to stdout by the function
-        :return: NoneType
+        :return: Returns None
         """
         return_value = self.view.get_player_move()
         self.assertEqual(
@@ -61,14 +61,45 @@ class Connect4GetPlayerMoveTest(unittest.TestCase):
         )
         self.assertEqual(return_value, 4, "get_player_move should return 4")
 
-    @patch('builtins.input', side_effect=["10", "-3", "2"])
-    def test_with_invalid_int(self, inputted_value):
+    @patch('builtins.input', side_effect=["8", "0", "2"])
+    @patch('sys.stdout', new_callable=StringIO)
+    def test_with_invalid_int(self, output, inputted_value):
         """
         Ensures that the view properly rejects invalid integers.
-        :param inputted_value:
-        :return:
+        :param inputted_value: strings passed in by mock.patch
+        :return: Returns None
         """
-        pass
+        return_value = self.view.get_player_move()
+        self.assertEqual(
+            output.getvalue(),
+            "Please type only an integer from 1 to 7.\n"
+            "Please type only an integer from 1 to 7.\n",
+            "Fails to berate for integers outside of board's range"
+        )
+        self.assertEqual(return_value,
+                         2,
+                         "Fails to get correct integer after invalid one"
+        )
+
+    @patch('builtins.input', side_effect=["seven", "6"])
+    @patch('sys.stdout', new_callable=StringIO)
+    def test_with_invalid_int(self, output, inputted_value):
+        """
+        Ensures that the view properly rejects invalid integers.
+        :param inputted_value: strings passed in by mock.patch
+        :return: Returns None
+        """
+        return_value = self.view.get_player_move()
+        self.assertEqual(
+            output.getvalue(),
+            "Please type only an integer from 1 to 7.\n",
+            "Fails to berate for strs that cannot be cast as ints"
+            )
+        self.assertEqual(
+            return_value,
+            6,
+            "Fails to get correct integer after invalid str"
+        )
 
 
 if __name__ == '__main__':

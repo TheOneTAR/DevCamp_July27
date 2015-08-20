@@ -32,10 +32,11 @@ class Connect4GetPlayerNameTest(unittest.TestCase):
     @patch('sys.stdout', new_callable=StringIO)
     def test_no_name(self, output, inputted_value):
         """
-
-        :param output:
-        :param inputted_value:
-        :return:
+        Ensure that the view chooses a random name if the user enters
+        an empty string.
+        :param output: catches the stdout text
+        :param inputted_value: strings passed in by mock.patch
+        :return: Returns None
         """
         with open('bin/names.txt') as f:
             names = [line.rstrip() for line in f]
