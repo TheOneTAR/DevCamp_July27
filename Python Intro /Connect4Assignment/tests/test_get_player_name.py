@@ -46,5 +46,6 @@ class Connect4GetPlayerNameTest(unittest.TestCase):
         self.assertIn(name, long_name)
 
 
+
 if __name__ == '__main__':
     unittest.main()

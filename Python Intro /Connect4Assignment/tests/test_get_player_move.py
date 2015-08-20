@@ -56,7 +56,7 @@ class Connect4GetPlayerMoveTest(unittest.TestCase):
         return_value = self.view.get_player_move()
         self.assertEqual(
             output.getvalue(),
-            "That is not a valid move.\n",
+            "Please type only an integer from 1 to 7.\n",
             "Empty string warning is incorrect"
         )
         self.assertEqual(return_value, 4, "get_player_move should return 4")
