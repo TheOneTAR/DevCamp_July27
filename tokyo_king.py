@@ -361,7 +361,6 @@ class Monster(object):
       self.status = "Out of Tokyo"
       self.health = 10
       self.victory_points = 0
-      self.energy = 0
 
    def in_tokyo(self):
       """Helper method that returns True if Monster is in Tokyo"""
@@ -369,7 +368,7 @@ class Monster(object):
 
    def flee(self):
       """Prompt the Monster to see if they want to 
-      flee Tokyo. This is called after the mosnter has
+      flee Tokyo. This is called after the monster has
       been hit while in Tokyo.
 
       Return:
