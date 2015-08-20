@@ -19,7 +19,7 @@ class Connect4AddPlayerTest(unittest.TestCase):
         Ensure that the Game correctly adds Players to its list.
         :return: Returns None
         """
-        self.game.add_player("Peele", "red")
+        self.game.add_player("Peele", "\u25cb")
         self.assertEqual(
             len(self.game.players),
             1,
@@ -27,7 +27,7 @@ class Connect4AddPlayerTest(unittest.TestCase):
         )
         self.assertEqual(
             self.game.players[0],
-            Player("Peele", "red"),
+            Player("Peele", "\u25cb"),
             "Failed to instantiate Player correctly"
         )
 
@@ -36,8 +36,8 @@ class Connect4AddPlayerTest(unittest.TestCase):
         Ensure that the Game correctly adds the second Player
         :return: Returns None
         """
-        self.game.add_player("Peele", "red")
-        self.game.add_player("Tennille", "yellow")
+        self.game.add_player("Peele", "\u25cb")
+        self.game.add_player("Tennille", "\u25cf")
         self.assertEqual(
             len(self.game.players),
             2,
@@ -45,7 +45,7 @@ class Connect4AddPlayerTest(unittest.TestCase):
         )
         self.assertEqual(
             self.game.players[1],
-            Player("Tennille", "yellow"),
+            Player("Tennille", "\u25cf"),
             "Failed to instantiate Player correctly"
         )
 
