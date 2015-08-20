@@ -1,5 +1,7 @@
 __author__ = 'joecken'
 
+import sys
+import os
 from random import choice
 
 
@@ -80,3 +82,18 @@ class View:
                   .format(player_name, player_name)
 
         print(awesome)
+
+    def print_board(board):
+        """
+        Given a board, print the lists of lists.
+        :param board: a list of lists that represents the game board
+        :return:
+        """
+        os.system('cls' if os.name == 'nt' else 'clear')
+        sys.stdout.write("\r")
+        for i in range(5,0,-1):
+            print('|',"|".join(column[i] for column in board), end='|\n', sep="")
+        print("|-------------|")
+        print("-             -")
+
+        sys.stdout.flush()

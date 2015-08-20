@@ -49,6 +49,20 @@ class StaticPrintStatements(unittest.TestCase):
 
         self.assertEqual(output.getvalue(), awesome)
 
+    @patch('sys.stdout', new_callable=StringIO)
+    def print_board(self, output):
+        board = [['X','O','X',' ',' ',' '],
+                 ['O','X','O',' ',' ',' '],
+                 ['X','O','X',' ',' ',' '],
+                 ['O','X','O','X',' ',' '],
+                 ['X','O','X',' ',' ',' '],
+                 ['X','O','X',' ',' ',' '],
+                 ['O','X',' ',' ',' ',' ']]
+
+        self.view.print_board(board)
+
+        self.assertEqual(board, output.getvalue())
+
 
 
 if __name__ == '__main__':
