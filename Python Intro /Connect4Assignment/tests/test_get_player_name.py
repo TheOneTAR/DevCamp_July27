@@ -3,6 +3,7 @@ __author__ = 'TheOneTAR'
 import unittest
 from connect4_view import View
 from unittest.mock import patch
+from io import StringIO
 
 long_name = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."\
             "Pellentesque mi nibh, iaculis molestie neque eget, faucibus "\
@@ -28,9 +29,16 @@ class Connect4GetPlayerNameTest(unittest.TestCase):
         self.assertEqual(name, 'Rob-E')
 
     @patch('builtins.input', return_value=long_name)
-    def test_long_name(self, input):
+    @patch('sys.stdout', new_callable=StringIO)
+    def test_long_name(self, input, output):
         """Ensure that the view will return a more reasonably sized name."""
         name = self.view.get_player_name()
+
+        long_name_error = "Wow, that's an impressive name. " \
+                          "How about we call you Lorem? Hi, Lorem!"
+
+        self.assertEqual(output.getvalue(),long_name_error,
+                         "The long name was not shortened")
         if len(name) > 20:
             self.assertTrue(False,"The name is still too long.")
             return
