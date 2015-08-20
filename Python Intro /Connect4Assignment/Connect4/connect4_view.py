@@ -26,6 +26,12 @@ class View:
         return name
 
     def get_player_move(self, msg=""):
+        """
+        Asks user for move, checks if intelligible and asks again
+        if necessary.
+        :param msg: Message to the user about last failure, if necessary
+        :return: An integer representing the column in which to play
+        """
         if msg != "":
             print(msg)
         move = ""
