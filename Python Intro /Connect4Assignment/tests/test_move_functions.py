@@ -24,7 +24,7 @@ class Connect4MoveTests(unittest.TestCase):
         :return:
         """
         # Give 5
-        column = self.game.get_move()
+        column = self.game.get_move("Rob-E")
 
         # Ensure 4 is returned
         self.assertEqual(column, 4)
