@@ -28,7 +28,7 @@ class View:
                   .format(name, name))
         return name
 
-    def get_player_move(self, msg=""):
+    def get_player_move(self, name, msg=""):
         """
         Asks user for move, checks if intelligible and asks again
         if necessary.
@@ -39,13 +39,14 @@ class View:
             print(msg)
         move = ""
         while move == "":
-            move = input("Where would you like to play?")
+            move = input("Where would you like to play, {}? ".format(name))
             try:
                 move = int(move)
             except ValueError:
                 move = 8
             if move not in range(1, 8):
-                print("Please type only an integer from 1 to 7.")
+                print("Please type only an integer from 1 to 7, {}."
+                      .format(name))
                 move = ""
         return move
 
@@ -92,10 +93,12 @@ class View:
         """
         os.system('cls' if os.name == 'nt' else 'clear')
         sys.stdout.write("\r")
-        for i in range(5, 0, -1):
-            print('|', "|".join(column[i] for column in board), end='|\n', sep="")
-        print("|-------------|")
-        print("-             -")
+        print("Connect 4 Game:\n")
+
+        for i in range(5, -1, -1):
+            print('   |', "|".join(column[i] for column in board), end='|\n', sep="")
+        print("   |-------------|")
+        print("   -             -")
 
         sys.stdout.flush()
 
@@ -107,6 +110,9 @@ class View:
         :return:
         """
         self._drop_piece(target, (target[0], -1), None, token, board)
+
+    def animate_turn(self, column, row, token, board):
+        self._drop_piece((column,row-6), (column,-1), None, token, board)
 
     def _drop_piece(self, target, current, old, token, board):
         """

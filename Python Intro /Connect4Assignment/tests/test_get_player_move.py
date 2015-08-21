@@ -23,7 +23,7 @@ class Connect4GetPlayerMoveTest(unittest.TestCase):
         :param inputted_value: string passed in by mock.patch
         :return: Returns None
         """
-        return_value = self.view.get_player_move()
+        return_value = self.view.get_player_move("Rob-E")
         self.assertEqual(return_value, 1, "get_player_move should return 1")
 
     @patch('builtins.input', return_value="3")
@@ -35,7 +35,7 @@ class Connect4GetPlayerMoveTest(unittest.TestCase):
         :param output: string printed to stdout by the function
         :return: Returns None
         """
-        return_value = self.view.get_player_move(msg="Not so much.")
+        return_value = self.view.get_player_move("Rob-E", msg="Not so much.")
         self.assertEqual(
             output.getvalue(),
             "Not so much.\n",
@@ -53,10 +53,10 @@ class Connect4GetPlayerMoveTest(unittest.TestCase):
         :param output: strings printed to stdout by the function
         :return: Returns None
         """
-        return_value = self.view.get_player_move()
+        return_value = self.view.get_player_move("Rob-E")
         self.assertEqual(
             output.getvalue(),
-            "Please type only an integer from 1 to 7.\n",
+            "Please type only an integer from 1 to 7, Rob-E.\n",
             "Empty string warning is incorrect"
         )
         self.assertEqual(return_value, 4, "get_player_move should return 4")
@@ -69,11 +69,11 @@ class Connect4GetPlayerMoveTest(unittest.TestCase):
         :param inputted_value: strings passed in by mock.patch
         :return: Returns None
         """
-        return_value = self.view.get_player_move()
+        return_value = self.view.get_player_move("Rob-E")
         self.assertEqual(
             output.getvalue(),
-            "Please type only an integer from 1 to 7.\n"
-            "Please type only an integer from 1 to 7.\n",
+            "Please type only an integer from 1 to 7, Rob-E.\n"
+            "Please type only an integer from 1 to 7, Rob-E.\n",
             "Fails to berate for integers outside of board's range"
         )
         self.assertEqual(
@@ -90,10 +90,10 @@ class Connect4GetPlayerMoveTest(unittest.TestCase):
         :param inputted_value: strings passed in by mock.patch
         :return: Returns None
         """
-        return_value = self.view.get_player_move()
+        return_value = self.view.get_player_move("Rob-E")
         self.assertEqual(
             output.getvalue(),
-            "Please type only an integer from 1 to 7.\n",
+            "Please type only an integer from 1 to 7, Rob-E.\n",
             "Fails to berate for strs that cannot be cast as ints"
             )
         self.assertEqual(

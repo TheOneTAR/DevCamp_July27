@@ -7,12 +7,45 @@ from itertools import product
 
 class Connect4:
     """The Controller for the Connect 4 game."""
-    def main(self):
-        pass
 
     def __init__(self):
         self.view = View()
         self.model = Game()
+
+    def main(self):
+
+        # Create the two players
+        self.create_player('\u25cf')
+        self.create_player('\u25cb')
+
+        while not self.update_player():
+            move = -1
+            msg = ""
+            while move < 0:
+                self.view.print_board(self.model.get_board())
+                move = self.get_move(self.model.get_current_player().name, msg)
+                if self.check_move(self.model.get_board(), move):
+                    row = self.model.update_board(move)
+                    self.model.get_board()[move][row] = ' '
+                    self.view.animate_turn(move,
+                                           row,
+                                           self.model.get_current_player().token,
+                                           self.model.get_board())
+                else:
+                    msg = "That move is not legal; the column is full."
+                    move = -1
+            is_won = self.winner_check(
+                self.model.get_board(),
+                self.model.get_current_player().token
+            )
+            if is_won:
+                self.view.declare_awesome(
+                    self.model.get_current_player().name
+                )
+                break
+        else:
+            self.view.declare_sadness()
+
 
     def create_player(self, token):
         """
@@ -24,12 +57,12 @@ class Connect4:
         name = self.view.get_player_name()
         self.model.add_player(name, token)
 
-    def get_move(self):
+    def get_move(self, name, msg=""):
         """
         Gets a move from the user to pass to the game.
         :return: the column of Player's choice (int)
         """
-        return self.view.get_player_move() - 1
+        return self.view.get_player_move(name, msg) - 1
 
     def check_move(self, board, column):
         """
@@ -88,3 +121,7 @@ class Connect4:
             return True
 
         return False
+
+if __name__ == '__main__':
+    controller = Connect4()
+    controller.main()
