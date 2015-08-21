@@ -6,7 +6,6 @@ from unittest.mock import patch
 from io import StringIO
 
 
-
 class StaticPrintStatements(unittest.TestCase):
     """Test that the needed static strings are printed correctly."""
 
@@ -18,7 +17,10 @@ class StaticPrintStatements(unittest.TestCase):
 
     @patch('sys.stdout', new_callable=StringIO)
     def test_show_instructions(self, output):
-        """Prints the instructions for how to play the game."""
+        """
+        Prints the instructions for how to play the game.
+        :return: Returns None
+        """
 
         self.view.show_instructions()
 
@@ -34,7 +36,10 @@ class StaticPrintStatements(unittest.TestCase):
 
     @patch('sys.stdout', new_callable=StringIO)
     def test_declare_sadness(self, output):
-        """Prints a very sad message that the players have tied."""
+        """
+        Prints a very sad message that the players have tied.
+        :return: Returns None
+        """
         self.view.declare_sadness()
         sadness = "Well, you both should be filled with an immense sadness," \
                   " as there is no winner. You have tied.\n"
@@ -43,7 +48,10 @@ class StaticPrintStatements(unittest.TestCase):
 
     @patch('sys.stdout', new_callable=StringIO)
     def test_declare_awesome(self, output):
-        """Prints that someone is AWESOME, because they won the game."""
+        """
+        Prints that someone is AWESOME, because they won the game.
+        :return: Returns None
+        """
         self.view.declare_awesome("Vlaad")
         awesome = "Woo! Who's awesome? Vlaad's AWESOME, cause Vlaad won!!\n"
 
@@ -51,13 +59,13 @@ class StaticPrintStatements(unittest.TestCase):
 
     @patch('sys.stdout', new_callable=StringIO)
     def print_board(self, output):
-        board = [['X','O','X',' ',' ',' '],
-                 ['O','X','O',' ',' ',' '],
-                 ['X','O','X',' ',' ',' '],
-                 ['O','X','O','X',' ',' '],
-                 ['X','O','X',' ',' ',' '],
-                 ['X','O','X',' ',' ',' '],
-                 ['O','X',' ',' ',' ',' ']]
+        board = [['X', 'O', 'X', ' ', ' ', ' '],
+                 ['O', 'X', 'O', ' ', ' ', ' '],
+                 ['X', 'O', 'X', ' ', ' ', ' '],
+                 ['O', 'X', 'O', 'X', ' ', ' '],
+                 ['X', 'O', 'X', ' ', ' ', ' '],
+                 ['X', 'O', 'X', ' ', ' ', ' '],
+                 ['O', 'X', ' ', ' ', ' ', ' ']]
 
         self.view.print_board(board)
 

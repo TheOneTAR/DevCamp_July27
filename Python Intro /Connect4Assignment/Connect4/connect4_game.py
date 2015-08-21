@@ -17,7 +17,7 @@ class Game:
 
     def __init__(self):
         self.players = []
-        self.board = [[" " for x in range(6)] for y in range(7)]
+        self.board = [[" " for _ in range(6)] for _ in range(7)]
         self.turn = 0
 
     def add_player(self, name, token):
@@ -44,12 +44,11 @@ class Game:
                 self.board[index - 1][i] = token
                 break
 
-
     def get_current_player(self):
         return self.players[self.turn % 2]
 
     def update_player(self):
-        pass
+        self.turn += 1
 
     def get_board(self):
         """

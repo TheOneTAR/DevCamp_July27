@@ -17,6 +17,10 @@ class Connect4UpdateBoardTest(unittest.TestCase):
         del self.game
 
     def test_with_token_one(self):
+        """
+        Ensures that an initial token correctly places in a column.
+        :return: Returns None
+        """
         self.game.update_board(5)
 
         board = [
@@ -36,6 +40,10 @@ class Connect4UpdateBoardTest(unittest.TestCase):
         )
 
     def test_with_token_two(self):
+        """
+        Ensures that a second token correctly places in a column.
+        :return: Returns None
+        """
         self.game.update_board(5)
         self.game.turn += 1
         self.game.update_board(5)

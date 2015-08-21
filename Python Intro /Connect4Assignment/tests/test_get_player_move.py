@@ -76,9 +76,10 @@ class Connect4GetPlayerMoveTest(unittest.TestCase):
             "Please type only an integer from 1 to 7.\n",
             "Fails to berate for integers outside of board's range"
         )
-        self.assertEqual(return_value,
-                         2,
-                         "Fails to get correct integer after invalid one"
+        self.assertEqual(
+            return_value,
+            2,
+            "Fails to get correct integer after invalid one"
         )
 
     @patch('builtins.input', side_effect=["seven", "6"])

@@ -23,7 +23,7 @@ class Connect4GetPlayerNameTest(unittest.TestCase):
         del self.view
 
     @patch('builtins.input', return_value='Rob-E')
-    def test_normal_name(self, input):
+    def test_normal_name(self, inputted_value):
         """Ensure that the view will return a string that is input."""
         name = self.view.get_player_name()
         self.assertEqual(name, 'Rob-E')

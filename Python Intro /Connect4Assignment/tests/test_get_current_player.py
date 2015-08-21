@@ -19,6 +19,7 @@ class Connect4GetCurrentPlayerTest(unittest.TestCase):
     def test_player_one(self):
         """
         Ensures the Game returns the first Player if turn is even
+        :return: Returns None
         """
         self.game.turn = 8
         current_player = self.game.get_current_player()
@@ -27,6 +28,7 @@ class Connect4GetCurrentPlayerTest(unittest.TestCase):
     def test_player_two(self):
         """
         Ensures the Game returns the second Player if turn is odd
+        :return: Returns None
         """
         self.game.turn = 17
         current_player = self.game.get_current_player()
