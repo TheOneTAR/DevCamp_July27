@@ -30,6 +30,13 @@ class Game:
         self.players.append(Player(name, token))
 
     def update_board(self, index):
+        """
+        Adds the proper token to the board in the column passed in
+        by index (the value passed in is human input, and needs
+        to be decremented by 1 first).
+        :param index: the column to add a piece to (counting at 1)
+        :return: Returns None
+        """
         column = self.board[index - 1]
         token = self.players[self.turn % 2].token
         for i, slot in enumerate(column):
@@ -39,10 +46,14 @@ class Game:
 
 
     def get_current_player(self):
-        pass
+        return self.players[self.turn % 2]
 
     def update_player(self):
         pass
 
     def get_board(self):
-        pass
+        """
+        passes board to Controller
+        :return: the board as a list of lists of strings
+        """
+        return self.board

@@ -2,7 +2,7 @@ __author__ = 'joecken'
 
 import unittest
 
-from connect4_game import Player, Game
+from connect4_game import Game
 
 
 class Connect4UpdateBoardTest(unittest.TestCase):
