@@ -2,6 +2,7 @@ __author__ = 'TheOneTAR'
 
 from connect4_view import View
 from connect4_game import Game
+from itertools import product
 
 
 class Connect4:
@@ -43,13 +44,37 @@ class Connect4:
 
         return False
 
-    def winner_check(self, board):
+    def winner_check(self, board, token):
         """
         Looks to see if the player that just moved won.
         :param board: current state of the game board
         :return: whether the move is legal (bool)
         """
-        pass
+
+        # Vertical
+        # for each column, make it a string, look for substring of four in a row
+        for col in board:
+            if (token * 4) in ''.join(col):
+                return True
+
+        # Horizontal
+        for i in range(6):
+            if (token * 4) in ''.join(column[i] for column in board):
+                return True
+
+        # Diagonal Right
+
+        for i,j in product(range(4),range(3)):
+            if (token * 4) in ''.join(board[i+k][j+k] for k in range(4)):
+                return True
+
+        # Diagonal Left
+        for i,j in product(range(4),range(3,6)):
+            if (token * 4) in ''.join(board[i+k][j-k] for k in range(4)):
+                return True
+
+        # No solution found, so return False
+        return False
 
     def update_player(self):
         """
