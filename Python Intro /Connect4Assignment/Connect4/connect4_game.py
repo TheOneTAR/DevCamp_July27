@@ -35,14 +35,16 @@ class Game:
         by index (the value passed in is human input, and needs
         to be decremented by 1 first).
         :param index: the column to add a piece to (counting at 1)
-        :return: Returns None
+        :return: Returns the row the piece finished at
         """
-        column = self.board[index - 1]
+        column = self.board[index]
         token = self.players[self.turn % 2].token
         for i, slot in enumerate(column):
             if slot == ' ':
-                self.board[index - 1][i] = token
-                break
+                self.board[index][i] = token
+                #return the row where the piece finished
+                return i
+
 
     def get_current_player(self):
         return self.players[self.turn % 2]

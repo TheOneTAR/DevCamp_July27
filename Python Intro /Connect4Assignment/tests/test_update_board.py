@@ -21,7 +21,7 @@ class Connect4UpdateBoardTest(unittest.TestCase):
         Ensures that an initial token correctly places in a column.
         :return: Returns None
         """
-        self.game.update_board(5)
+        self.game.update_board(4)
 
         board = [
             [" "] * 6,
@@ -44,9 +44,9 @@ class Connect4UpdateBoardTest(unittest.TestCase):
         Ensures that a second token correctly places in a column.
         :return: Returns None
         """
-        self.game.update_board(5)
+        self.game.update_board(4)
         self.game.turn += 1
-        self.game.update_board(5)
+        self.game.update_board(4)
 
         board = [
             [" "] * 6,

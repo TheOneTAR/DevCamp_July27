@@ -28,7 +28,7 @@ class Connect4:
         Gets a move from the user to pass to the game.
         :return: the column of Player's choice (int)
         """
-        pass
+        return self.view.get_player_move() - 1
 
     def check_move(self, board, column):
         """
@@ -37,7 +37,11 @@ class Connect4:
         :param column: which column the player wants
         :return: whether the move is legal (bool)
         """
-        pass
+        # Check to make sure the column is not full.
+        if board[column][5] == ' ':
+            return True
+
+        return False
 
     def winner_check(self, board):
         """
