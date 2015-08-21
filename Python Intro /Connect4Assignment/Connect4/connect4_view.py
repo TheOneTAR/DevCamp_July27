@@ -1,7 +1,8 @@
 __author__ = 'joecken'
 
-import sys
 import os
+import sys
+import time
 from random import choice
 
 
@@ -76,7 +77,7 @@ class View:
         Called when there is a winner to declare how
         awesome that player is.
         :param player_name: name of the winning player
-        :return: None
+        :return: Returns None
         """
         awesome = "Woo! Who's awesome? {}'s AWESOME, cause {} won!!"\
                   .format(player_name, player_name)
@@ -87,7 +88,7 @@ class View:
         """
         Given a board, print the lists of lists.
         :param board: a list of lists that represents the game board
-        :return:
+        :return: Returns None
         """
         os.system('cls' if os.name == 'nt' else 'clear')
         sys.stdout.write("\r")
@@ -97,3 +98,35 @@ class View:
         print("-             -")
 
         sys.stdout.flush()
+
+    def add_token_to_board(self, target, token, board):
+        """
+        Adds a token to the board, via a cute animation.
+        Due to the animation, this function is untestable.
+        :param target: (column,row) tuple for where the piece is going.
+        :return:
+        """
+        self._drop_piece(target, (target[0],-1), None, token, board)
+
+    def _drop_piece(self, target, current, old, token, board):
+        """
+        Recursive function that animates a piece being added to the board.
+        :param target: goal location
+        :param current: where the token currently is
+        :param old: where the token was
+        :param board: the board itself
+        :param piece: the token being dropped
+        :return:
+        """
+        if target != old:
+            time.sleep(0.2)
+            #Then 'drop' it down through the rows
+            # Tuples is (column,row)
+            if old != None:
+                board[old[0]][old[1]] = ' '
+            board[current[0]][current[1]] = token
+            new_current = (current[0], current[1]-1)
+            self.print_board(board)
+
+            #Recursive!
+            self._drop_piece(target, new_current, current, token, board)
