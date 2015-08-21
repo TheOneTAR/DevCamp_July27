@@ -6,7 +6,7 @@ from unittest.mock import patch
 
 class Connect4MoveTests(unittest.TestCase):
     """
-    Tests to ensure that the get move function behaves connectly.
+    Tests to ensure that the get move function behaves correctly.
     """
 
     def setUp(self):

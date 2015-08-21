@@ -57,4 +57,9 @@ class Connect4:
         game has ended in a tie.
         :return: whether the game ended in a tie (bool)
         """
-        pass
+        self.model.update_player()
+
+        if self.model.turn == 42:
+            return True
+
+        return False
