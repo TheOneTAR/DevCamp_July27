@@ -20,7 +20,7 @@ class Connect4CreatePlayerTest(unittest.TestCase):
     def test_create_valid_player(self, inputted_value):
         """
         Create a player using a valid name.
-        :return:
+        :return: Returns None
         """
         self.game.create_player('W')
 
@@ -31,7 +31,7 @@ class Connect4CreatePlayerTest(unittest.TestCase):
     def test_create_valid_player(self, inputted_value, output):
         """
         Create a player using a valid name.
-        :return:
+        :return: Returns None
         """
         self.game.create_player('W')
 
