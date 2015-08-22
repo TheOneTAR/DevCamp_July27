@@ -53,12 +53,13 @@ class StaticPrintStatements(unittest.TestCase):
         :return: Returns None
         """
         self.view.declare_awesome("Vlaad")
+
         awesome = "Woo! Who's awesome? Vlaad's AWESOME, cause Vlaad won!!\n"
 
         self.assertEqual(output.getvalue(), awesome)
 
     @patch('sys.stdout', new_callable=StringIO)
-    def print_board(self, output):
+    def test_print_board(self, output):
         board = [['X', 'O', 'X', ' ', ' ', ' '],
                  ['O', 'X', 'O', ' ', ' ', ' '],
                  ['X', 'O', 'X', ' ', ' ', ' '],
@@ -69,7 +70,17 @@ class StaticPrintStatements(unittest.TestCase):
 
         self.view.print_board(board)
 
-        self.assertEqual(board, output.getvalue())
+        board_output = "\rConnect 4 Game:\n\n" \
+                       "   | | | | | | | |\n"\
+                       "   | | | | | | | |\n"\
+                       "   | | | |X| | | |\n"\
+                       "   |X|O|X|O|X|X| |\n"\
+                       "   |O|X|O|X|O|O|X|\n"\
+                       "   |X|O|X|O|X|X|O|\n"\
+                       "   |-------------|\n"\
+                       "   -             -\n"
+
+        self.assertEqual(board_output, output.getvalue())
 
 
 

@@ -14,6 +14,9 @@ class Connect4:
 
     def main(self):
 
+        # Clear the console, and print the instructions.
+        self.view.show_instructions()
+
         # Create the two players
         self.create_player('\u25cf')
         self.create_player('\u25cb')

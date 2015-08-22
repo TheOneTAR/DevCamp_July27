@@ -14,7 +14,7 @@ class View:
         Asks user for name, shortening if necessary.
         :return: A string of between 1 and 20 characters
         """
-        name = input("Who you be?")
+        name = input("Who you be? ")
         if len(name) > 20 or not name:
             if len(name) > 20:
                 name = name.split()[0][0:20]
@@ -54,6 +54,8 @@ class View:
         """
         Print the instructions of how to play onto the screen.
         """
+        os.system('cls' if os.name == 'nt' else 'clear')
+
         instructions = "Let's play Connect 4! The first player to connect 4" \
                        "tokens of their color vertically, horizontally, " \
                        "or diagonally, wins. Players will alternate turns " \
