@@ -24,7 +24,7 @@ class View:
                     names = [line.rstrip() for line in f]
                 name = choice(names)
                 print("You don't care at all?")
-            print("How about we call you {}? Hi, {}!"
+            print("How about we call you {}? Hi, {}!\n"
                   .format(name, name))
         return name
 
@@ -66,6 +66,19 @@ class View:
 
         print(instructions)
 
+    def welcome_players(self, player_1):
+        """
+        Welcome the newly named players to the wonderful game of Connect 4.
+        :return:
+        """
+        print("Alright! Let's get started! To play the game, "
+              "on your turn simply "
+              "enter which column you want to drop your piece into. "
+              "{0}, why don't you start us off."
+              .format(player_1))
+
+        input("Press Enter to begin the game.")
+
     def declare_sadness(self):
         """
         Called when there's a tie to inform the players of how
@@ -96,7 +109,7 @@ class View:
         os.system('cls' if os.name == 'nt' else 'clear')
         sys.stdout.write("\r")
         print("Connect 4 Game:\n")
-
+        print("    1 2 3 4 5 6 7 ")
         for i in range(5, -1, -1):
             print('   |', "|".join(column[i] for column in board), end='|\n', sep="")
         print("   |-------------|")
@@ -104,16 +117,13 @@ class View:
 
         sys.stdout.flush()
 
-    def add_token_to_board(self, target, token, board):
+    def animate_turn(self, column, row, token, board):
         """
         Adds a token to the board, via a cute animation.
         Due to the animation, this function is untestable.
         :param target: (column,row) tuple for where the piece is going.
         :return:
         """
-        self._drop_piece(target, (target[0], -1), None, token, board)
-
-    def animate_turn(self, column, row, token, board):
         self._drop_piece((column,row-6), (column,-1), None, token, board)
 
     def _drop_piece(self, target, current, old, token, board):

@@ -70,7 +70,8 @@ class StaticPrintStatements(unittest.TestCase):
 
         self.view.print_board(board)
 
-        board_output = "\rConnect 4 Game:\n\n" \
+        board_output = "\rConnect 4 Game:\n\n"\
+                       "    1 2 3 4 5 6 7 \n"\
                        "   | | | | | | | |\n"\
                        "   | | | | | | | |\n"\
                        "   | | | |X| | | |\n"\
@@ -81,7 +82,6 @@ class StaticPrintStatements(unittest.TestCase):
                        "   -             -\n"
 
         self.assertEqual(board_output, output.getvalue())
-
 
 
 if __name__ == '__main__':
