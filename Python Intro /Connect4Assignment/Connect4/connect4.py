@@ -21,6 +21,8 @@ class Connect4:
         self.create_player('\u25cf')
         self.create_player('\u25cb')
 
+        self.view.welcome_players(self.model.get_current_player().name)
+
         while not self.update_player():
             move = -1
             msg = ""

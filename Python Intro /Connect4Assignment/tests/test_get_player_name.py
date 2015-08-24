@@ -50,7 +50,7 @@ class Connect4GetPlayerNameTest(unittest.TestCase):
         name = self.view.get_player_name()
 
         long_name_error = "Wow, that's an impressive name.\n" \
-                          "How about we call you Lorem? Hi, Lorem!\n"
+                          "How about we call you Lorem? Hi, Lorem!\n\n"
 
         self.assertEqual(output.getvalue(), long_name_error,
                          "The long name was not shortened")
