@@ -28,3 +28,12 @@ td {
 tbody tr:first-child a{
     color: #fff;
 }
+
+dt a {
+    color: #1bb0ce;
+    text-decoration: none;
+}
+
+dt a:hover {
+    text-decoration: underline;
+}
