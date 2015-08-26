@@ -62,19 +62,20 @@
                         rows[i].lastElementChild.textContent = "No";
                     }
                 }
-                console.log(rows[i].innerHTML)
-
-
             }
-
-//            woodStock.className = 'false';
-//            woodStock.innerHTML = 'No';
         };
 
         function addStock() {
-
-            woodStock.className = 'true';
-            woodStock.innerHTML = 'Yes';
+            var rows = inventory.getElementsByTagName('tr');
+            for (var i=0; i < rows.length; i++) {
+                var input = rows[i].getElementsByTagName('input');
+                if (input[0].type == 'checkbox') {
+                    if (input[0].checked) {
+                        rows[i].lastElementChild.className = "true";
+                        rows[i].lastElementChild.textContent = "Yes";
+                    }
+                }
+            }
         };
 
         function addNewStock() {
