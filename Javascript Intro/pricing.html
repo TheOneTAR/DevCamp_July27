@@ -20,10 +20,10 @@
             </thead>
             <tbody id="inventory">
                 <tr>
-                    <td><input type="checkbox" /></td>
+                    <td class="checkbox_column"><input type="checkbox" /></td>
                     <td>Wood</td>
                     <td>$15</td>
-                    <td id="woodStock" class="true">Yes</td>
+                    <td id="woodStock" class="stock true">Yes</td>
                 </tr>
             </tbody>
             <tfoot>
@@ -53,14 +53,22 @@
         var woodstock, material, price;
 
         function removeStock() {
+            var rows = inventory.getElementsByTagName('tr');
+            for (var i=0; i < rows.length; i++) {
+                var input = rows[i].getElementsByTagName('input');
+                if (input[0].type == 'checkbox') {
+                    if (input[0].checked) {
+                        rows[i].lastElementChild.className = "false";
+                        rows[i].lastElementChild.textContent = "No";
+                    }
+                }
+                console.log(rows[i].innerHTML)
 
-            for (var i=0; i < 6; i++) {
-                console.log(i);
 
             }
 
-            woodStock.className = 'false';
-            woodStock.innerHTML = 'No';
+//            woodStock.className = 'false';
+//            woodStock.innerHTML = 'No';
         };
 
         function addStock() {
