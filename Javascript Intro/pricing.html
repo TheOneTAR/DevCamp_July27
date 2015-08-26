@@ -12,7 +12,7 @@
         <table width="100%">
             <thead>
                 <tr>
-                    <th></th>
+                    <th><input id="checkAll" type="checkbox" onclick="checkAll()" /></th>
                     <th>Material</th>
                     <th>Price</th>
                     <th>In Stock</th>
@@ -20,7 +20,7 @@
             </thead>
             <tbody id="inventory">
                 <tr>
-                    <td class="checkbox_column"><input type="checkbox" /></td>
+                    <td class="checkbox_column"><input type="checkbox" onclick="updateMainCheckbox(this)"/></td>
                     <td>Wood</td>
                     <td>$15</td>
                     <td id="woodStock" class="stock true">Yes</td>
@@ -51,6 +51,21 @@
 
         var inventory = document.getElementById('inventory');
         var woodstock, material, price;
+
+        function updateMainCheckbox(checkbox) {
+            if (!checkbox.checked) {
+                document.getElementById('checkAll').checked = false;
+            }
+        }
+
+        function checkAll() {
+            var inputs = inventory.getElementsByTagName('input');
+            for (var i=0; i < inputs.length; i++) {
+                if (inputs[i].type == 'checkbox') {
+                    inputs[i].checked = true;
+                }
+            }
+        }
 
         function removeStock() {
             var rows = inventory.getElementsByTagName('tr');
@@ -87,7 +102,7 @@
             }
 
             var newRow = "<tr>";
-            newRow += '<td><input type="checkbox"/></td>';
+            newRow += '<td><input type="checkbox" onclick="updateMainCheckbox(this)"/></td>';
             newRow += '<td>' + material + '</td>';
             newRow += '<td>$' + price + '</td>';
             newRow += '<td class="false">No</td>';
