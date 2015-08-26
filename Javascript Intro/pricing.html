@@ -12,7 +12,7 @@
         <table width="100%">
             <thead>
                 <tr>
-                    <th><input id="checkAll" type="checkbox" onclick="checkAll()" /></th>
+                    <th></th>
                     <th>Material</th>
                     <th>Price</th>
                     <th>In Stock</th>
@@ -20,7 +20,7 @@
             </thead>
             <tbody id="inventory">
                 <tr>
-                    <td class="checkbox_column"><input type="checkbox" onclick="updateMainCheckbox(this)"/></td>
+                    <td><input type="checkbox" /></td>
                     <td>Wood</td>
                     <td>$15</td>
                     <td id="woodStock" class="stock true">Yes</td>
@@ -49,10 +49,44 @@
 
     <script>
 
+        var inventory = document.getElementById('inventory');
+        var woodstock, material, price;
 
+        function removeStock() {
+            woodstock = document.getElementById('woodStock');
+            woodstock.className = 'false';
+            woodstock.innerHTML = 'No';
+        };
+
+        function addStock() {
+            woodstock = document.getElementById('woodStock');
+            woodstock.className = 'true';
+            woodstock.innerHTML = 'Yes';
+
+        };
+
+        function addNewStock() {
+            material = document.getElementById('material').value;
+            price = document.getElementById('price').value;
+
+            if (material === '' || price === '' || isNaN(price)) {
+                return
+            }
+
+            var newRow = "<tr>";
+            newRow += '<td><input type="checkbox"/></td>';
+            newRow += '<td>' + material + '</td>';
+            newRow += '<td>$' + price + '</td>';
+            newRow += '<td class="false">No</td>';
+            newRow += '</tr>';
+
+            inventory.innerHTML += newRow;
+
+            document.getElementById('material').value = '';
+            document.getElementById('price').value = '';
+        };
 
     </script>
-<script type="text/javascript" src="js/pricing.js"></script>
 </body>
 </html>
 
