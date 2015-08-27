@@ -1,0 +1,39 @@
+/**
+ * Styles for the Python Docs that are auto-generated.
+ * To apply them to your docs, simply add the following
+ * line to the page's head.
+ * <link rel="stylesheet" type="text/css" href="style.css" />
+**/
+
+
+body {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Helvetica';
+}
+
+table {
+    border-collapse: separate;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px #ccc;
+}
+
+td {
+    padding: 5px 5px 5px 10px;
+}
+
+tbody tr:first-child a{
+    color: #fff;
+}
+
+dt a {
+    color: #1bb0ce;
+    text-decoration: none;
+}
+
+dt a:hover {
+    text-decoration: underline;
+}
