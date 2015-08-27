@@ -1,5 +1,5 @@
 # This is a dice faking module
-from random import choice
+from random import choice, randint
 
 
 class Die():
@@ -9,7 +9,8 @@ class Die():
       self.currentValue = choice(self.possibleValues)
 
    def roll(self):
-      self.currentValue = choice(self.possibleValues)
+      num = randint(len(self.possibleValues))
+      self.currentValue = self.possibleValues[num]
       return self.currentValue
 
    def __repr__(self):

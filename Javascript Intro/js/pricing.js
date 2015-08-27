@@ -4,13 +4,17 @@
 var inventory = document.getElementById('inventory');
 var woodstock, material, price;
 
+checkAll = document.getElementById('checkAll');
+console.log(checkAll);
+checkAll.onclick = checkAllHandler(checkAll);
+
 function updateMainCheckbox(checkbox) {
     if (!checkbox.checked) {
         document.getElementById('checkAll').checked = false;
     }
 }
 
-function checkAll() {
+function checkAllHandler(check) {
     var inputs = inventory.getElementsByTagName('input');
     for (var i=0; i < inputs.length; i++) {
         if (inputs[i].type == 'checkbox') {

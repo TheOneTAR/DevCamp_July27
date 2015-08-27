@@ -20,6 +20,16 @@ function Product(name, stock, price) {
     };
 }
 
+function alertTheMedia(e, where) {
+    console.log(e);
+}
+
+ultag = document.getElementsByTagName('ul')[0];
+
+ultag.addEventListener('click', function (e) {
+    alertTheMedia(e, "ul")
+    }, false);
+
 var materials = [new Product('wood',10,15)];
 
 populateInventoryDOM();
@@ -64,18 +74,22 @@ function populateInventoryDOM() {
 
 }
 
-function checkAll(checkbox) {
+function checkAllHandler(e, number) {
+    console.log(e);
     var inputs = inventory.getElementsByTagName('input');
     for (var i=0; i < inputs.length; i++) {
         if (inputs[i].type == 'checkbox') {
-            inputs[i].checked = checkbox.checked;
+            inputs[i].checked = e.target.checked;
         }
     }
 }
+checkAll = document.getElementById('checkAll');
+checkAll.addEventListener('click', function (e) {
+    checkAllHandler(e, 6);
+}, false);
 
 function removeStock() {
     var rows = inventory.getElementsByTagName('tr');
-
     for (var i=0; i < rows.length; i++) {
         var inputs = rows[i].getElementsByTagName('input');
         if (inputs.length > 0 ) {
