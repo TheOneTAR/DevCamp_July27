@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* 
  * 
  * CSS for Mini Zen Mock-Up. 
@@ -137,4 +138,126 @@ footer a {
 footer {
    margin-top: 50px;
    text-align: right;
+=======
+@import url(http://fonts.googleapis.com/css?family=Nova+Square);
+
+h1{
+    font-size: 40px;
+    color: #E23548;
+    font-family: 'Nova Square', square;
+    margin-top: 60px;
+    margin:15px;
+}
+
+h3{
+    font-family: 'Nova Square', square;
+}
+
+body{
+    background-color: #EEEEEE;
+    font-family: sans-serif;
+    padding: 80px;
+    font-size:10pt;
+}
+article{
+    background-color: #FFF5E0;
+    box-shadow: 30px 35px 0px 0px #7AB3B0;
+    border:solid;
+    border-width: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    top padding-top: 5px;
+    margin:10px;
+}
+a {
+    color:#FEF1DD;
+    text-decoration:none;
+}
+article a{
+    color:#DD3846;
+    text-decoration:none;
+}
+
+header h2{
+    color: #FEF1DD;
+    background-color: #E23548;
+    font-family: 'Nova Square', cursive;
+    margin:15px;
+    padding:2px;
+}
+
+
+ul li{
+    text-decoration: none;
+    text-align:center;
+    margin: right;
+    background-color: #E23548;
+    font-style:none;
+    color: #FEF1DD;
+    margin: 5px;
+    padding:5px;
+    font-size: 10pt;
+    box-shadow: 10px 15px 0px 0px #F49581;
+    color:white;
+    display:block;
+}
+div ul{
+
+}
+
+footer{
+    text-align: right;
+}
+.participation, .explanation{
+    margin: left;
+    display: inline-block;
+    min-width: 300px;
+
+}
+.participation{
+    margin-bottom: 50px;
+}
+
+.preamble{
+    color:#FFF6E0;
+    background-color:#1B4548;
+    margin-bottom: 45px;
+    border: none;
+    padding:10px;
+}
+
+.explanation{
+    background-color: #FFF5E0;
+}
+
+.main.supporting{
+    width: 60%;
+    display: inline-block;
+}
+.sidebar{
+    display: inline-block;
+    width: 35%;
+    text-align: right;
+    vertical-align: top;
+    height:100%;
+}
+.zen-validate-html, .zen-validate-css{
+    background-color: #908673;
+    color:#FFFCE6;
+    padding: 5px;
+    margin: 1px;
+    border-radius: 3px;
+    box-shadow: 10px 15px 0px 0px #D8CEBC;
+    display: inline-block;
+
+}
+.resources{
+    display: none;
+}
+
+@media screen and (max-width:700px){
+    .sidebar{
+        display:block;
+    }
+>>>>>>> zen_mockup.css
 }
