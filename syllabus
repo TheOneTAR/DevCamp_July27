@@ -21,7 +21,11 @@
 
 - Maze
 <<<<<<< HEAD
+<<<<<<< HEAD
    - functions
+=======
+   - functions – NEED TO SPEND MORE TIME ON THIS
+>>>>>>> master
 =======
    - functions – NEED TO SPEND MORE TIME ON THIS
 >>>>>>> master
@@ -65,8 +69,11 @@
 - blackjack/21 game (pair programming, Lab)
    - Subclasses
 <<<<<<< HEAD
+<<<<<<< HEAD
    - repr
 =======
+=======
+>>>>>>> master
    - repr
 
 - HTML base structures (8/7/15)
@@ -91,4 +98,7 @@
    - Show them how to change the list style
    - Have them make a navigation section using lists
    
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master

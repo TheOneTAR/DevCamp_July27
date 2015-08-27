@@ -1,0 +1,60 @@
+ANGRY DICE – An assignment in patience.
+---------------------------------------------
+Create a new module called 'angry_dice.py'.In this module, create a program that lets a 
+Single Player play Angry Dice.
+
+When the game starts, it should display:
+--------------------------------------------------
+Welcome to Angry Dice! Roll the two dice until you get thru the 3 Stages!
+Stage 1 you need to roll 1 & 2
+Stage 2 you need to roll ANGRY & 4
+Stage 3 you need to roll 5 & 6
+You can lock a die needed for your current stage 
+and just roll the other one, but beware!
+If you ever get 2 ANGRY's at once, you have to restart to Stage 1!
+Also, you can never lock a 6! That's cheating!
+
+To roll the dice, simply input the name of the die you want to roll. 
+Their names are a and b.
+
+Press ENTER to start!
+--------------------------------------------------
+
+Within the program, there should be 2 dice, made with your Die class. They should have the sides:
+   ["1","2","ANGRY","4","5","6"]
+and be named 'a' and 'b'.
+
+Once the game starts, you should present your user with their initial roll in the display format:
+--------------------------------------------------
+You rolled:
+   a = [  5  ]
+   b = [  ANGRY  ]
+
+You are in Stage 2
+Roll dice:
+--------------------------------------------------
+The if the characters 'a' and/or 'b' are input, as part of ANY string, the program should roll the corresponding dice.
+
+If a die has a currentValue of 6 and isn't rolled, the program should tell the user they're cheating and not enable them to win until the 6 is rerolled.
+--------------------------------------------------
+You're cheating! You cannot lock a 6! You cannot win
+until you reroll it!
+You rolled:
+   a = [  6  ]
+   b = [  ANGRY  ]
+
+You are in Stage 3
+Roll dice:
+--------------------------------------------------
+The game should automagically progress them through the 3 stages and determine when they win. It should also reset them back to Stage1 if they roll two ANGRY dice.
+
+When the user gets 2 Angry Dice, the game should display:
+--------------------------------------------------
+WOW, you're ANGRY!
+Time to go back to Stage 1!
+--------------------------------------------------
+
+When the user wins, the program should display:
+--------------------------------------------------
+You've won! Calm down!
+--------------------------------------------------

@@ -362,7 +362,10 @@ class Monster(object):
       self.health = 10
       self.victory_points = 0
 <<<<<<< HEAD
+<<<<<<< HEAD
       self.energy = 0
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 
@@ -373,7 +376,11 @@ class Monster(object):
    def flee(self):
       """Prompt the Monster to see if they want to 
 <<<<<<< HEAD
+<<<<<<< HEAD
       flee Tokyo. This is called after the mosnter has
+=======
+      flee Tokyo. This is called after the monster has
+>>>>>>> master
 =======
       flee Tokyo. This is called after the monster has
 >>>>>>> master
