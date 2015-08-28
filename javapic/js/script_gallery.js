@@ -1,12 +1,10 @@
 // Gallery that is auto-populated with all the images in the folder.
-// When an image is clicked, it should show up larger.
-// Clicking anywhere on the page should remove the larger preview.
 // >>>-------------------------------------------------------------->
 
 
 var gallery = document.getElementById('gallery');
 var images = [];
-var numOfImages = 60
+var numOfImages = 60;
 
 // makes and array of image names matching the directory of images
 function produceListOfImgNamesARRAY() {
@@ -21,7 +19,7 @@ function produceListOfImgNamesARRAY() {
       images.push("images/pdxcg_" + i + ".jpg");
     }
   }
-  console.log(images);
+  // console.log(images);
 }
 produceListOfImgNamesARRAY();
 
@@ -40,7 +38,41 @@ function createListItemsWithImagesDOM() {
 }
 createListItemsWithImagesDOM();
 
-// event listener for click of an image
+
+// When an image is clicked, it should show up larger.
+// Clicking anywhere on the page should remove the larger preview.
+// >>>-------------------------------------------------------------->
+
+imgDiv = document.getElementById("image_show");
+imgDivChild = imgDiv.children[0];
+
+// listen for a click on an image and trigger showImg
+gallery.addEventListener("click", function(){ showImg(event); });
+
+// listen for a click on the image and stop event bubbling
+imgDivChild.addEventListener("click", function(){ stopHide(event); });
+
+// listen for a click on the div and trigger hideImg
+imgDiv.addEventListener("click", function(){ hideImg(); });
+
+// show image and replace img child src
+function showImg(e) {
+  imgDiv.className = "display_img";
+  imgDivChild.src = e.target.src;
+}
+
+// stop event flow bubbling when image is clicked
+function stopHide(e) {
+  e.stopPropagation();
+}
+
+// hide image div only when the div is clicked
+function hideImg() {
+  imgDiv.className = "display_none";
+}
+
+
+
 
 
 
