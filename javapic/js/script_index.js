@@ -7,20 +7,20 @@
 var jumbotron = document.getElementById("jumbotron");
 
 // Initializes the variables
-var imageNum = 10;
-var imageStr = "images/pdxcg_" + imageNum + ".jpg";
+var imgNum = 10;
+var imgSrc = "images/pdxcg_" + imgNum + ".jpg";
 
 // Sets the interval for the loop infinitely
 setInterval(function () {changeImage();}, 20000);
 
 // Iterates through images in the folder
 function changeImage() {
-  jumbotron.style.backgroundImage = "url(" + imageStr + ")";
-  console.log(imageNum);
-  if (imageNum === 60) {
-    imageNum = 9; // Max 60 images and restarts at image number 10
+  jumbotron.style.backgroundImage = "url(" + imgSrc + ")";
+  console.log(imgNum);
+  if (imgNum === 60) {
+    imgNum = 9; // Max 60 images and restarts at image number 10
   }
-  imageNum ++;
-  imageStr = "images/pdxcg_" + imageNum + ".jpg";
+  imgNum ++;
+  imgSrc = "images/pdxcg_" + imgNum + ".jpg";
 }
 
