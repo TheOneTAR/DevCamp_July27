@@ -2,8 +2,6 @@
 // Loops through some of our images every 20 seconds.
 // >>>-------------------------------------------------------------->
 
-
-// Gets the id jumbotron
 var jumbotron = document.getElementById("jumbotron");
 
 // Initializes the variables

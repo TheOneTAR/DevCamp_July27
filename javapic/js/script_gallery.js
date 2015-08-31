@@ -15,7 +15,6 @@ if (window.sessionStorage) {
   tagline.innerHTML = "develop something beautiful, " + txtName;
 }
 
-
 // makes an array of image names matching the directory of images
 // >>>-------------------------------------------------------------->
 function produceListOfImgNamesARRAY() {
@@ -48,7 +47,6 @@ function createListItemsWithImagesDOM() {
   }
 }
 createListItemsWithImagesDOM();
-
 
 // When an image is clicked, it should show up larger.
 // Clicking anywhere on the page should remove the larger preview.

@@ -6,13 +6,13 @@ var nameInput = document.querySelector("[name=name]");
 var username = document.querySelector("[name=username]");
 var email = document.querySelector("[type=email]");
 
-
 // validates each input field
 // >>>-------------------------------------------------------------->
 nameInput.addEventListener("blur", function(){ checkName(); });
 username.addEventListener("blur", function(){ checkUsername(); });
 email.addEventListener("blur", function(){ checkEmail(); });
 
+// check name input field
 function checkName() {
   if (nameInput.value.length < 2) {
     alert('Please provide a name of two or more characters.');
@@ -21,6 +21,7 @@ function checkName() {
   }
   return true
 }
+// check username input field
 function checkUsername() {
   if (username.value.length < 2) {
     alert('Please provide a username of two or more characters.');
@@ -29,6 +30,7 @@ function checkUsername() {
   }
   return true
 }
+// check email input field
 function checkEmail() {
   var valid = /[^@]+@[^@].+/;
   if (!valid.test(email.value)) {
@@ -41,11 +43,14 @@ function checkEmail() {
 }
 
 // prevent the submit button from resetting the page
+// otherwise route to the gallery.html
 // >>>-------------------------------------------------------------->
-form.addEventListener("submit", function(){ checkFormValidation(); });
+form.addEventListener("submit", function(){ checkFormValidation(event); });
 
-function checkFormValidation(event) {
-  if (checkName() === true && checkUsername() === true && checkEmail() === true) {
+function checkFormValidation(e) {
+  // otherwise submit form and go to gallery.html
+  if (checkName() && checkUsername() && checkEmail()) {
+    console.log(checkName(), checkUsername(), checkEmail())
     form.setAttribute("action", "gallery.html");
 
     // Make tagline Develop something beautiful, {name} on gallery.html
@@ -56,7 +61,8 @@ function checkFormValidation(event) {
     }
   }
   else {
-    e.preventDefault(); // prevent default submit button
+    // preventDefault for submit button
+    e.preventDefault();
   }
 }
 
