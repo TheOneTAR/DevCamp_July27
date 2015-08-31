@@ -4,7 +4,7 @@
 var gallery = document.getElementById('gallery');
 var tagline = document.querySelector(".tagline");
 var images = [];
-var numOfImages = 60;
+var imgMax = 60;
 
 
 // Make tagline Develop something beautiful, {name} from join.html
@@ -19,14 +19,14 @@ if (window.sessionStorage) {
 // >>>-------------------------------------------------------------->
 function produceListOfImgNamesARRAY() {
 
-  for(var i = 1; i < numOfImages + 1; i++) {
+  for(var imgNum = 1; imgNum < imgMax + 1; imgNum++) {
 
     // Images 1 .. 9 need a different URL structure
-    if (i < 10) {
-      images.push("images/pdxcg_0" + i + ".jpg");
+    if (imgNum < 10) {
+      images.push("images/pdxcg_0" + imgNum + ".jpg");
     } else {
       // Images 10 .. 60 need a different URL structure
-      images.push("images/pdxcg_" + i + ".jpg");
+      images.push("images/pdxcg_" + imgNum + ".jpg");
     }
   }
   // console.log(images);
