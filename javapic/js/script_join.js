@@ -23,7 +23,7 @@ function checkName() {
 }
 function checkUsername() {
   if (username.value.length < 2) {
-    alert('Please provide a username of two or more characters.');querySelector("span[class=tagline]");
+    alert('Please provide a username of two or more characters.');
     username.focus;
     return false
   }
