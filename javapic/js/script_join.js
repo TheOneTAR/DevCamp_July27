@@ -1,10 +1,14 @@
 // A login form that won’t let users continue until their inputs are correct
+// >>>-------------------------------------------------------------->
 
 var form = document.getElementById("signup");
 var nameInput = document.querySelector("[name=name]");
 var username = document.querySelector("[name=username]");
 var email = document.querySelector("[type=email]");
 
+
+// validates each input field
+// >>>-------------------------------------------------------------->
 nameInput.addEventListener("blur", function(){ checkName(); });
 username.addEventListener("blur", function(){ checkUsername(); });
 email.addEventListener("blur", function(){ checkEmail(); });
@@ -37,27 +41,25 @@ function checkEmail() {
 }
 
 // prevent the submit button from resetting the page
-// var submit = document.getElementById("submit");
+// >>>-------------------------------------------------------------->
 form.addEventListener("submit", function(){ checkFormValidation(); });
 
-function checkFormValidation() {
+function checkFormValidation(event) {
   if (checkName() === true && checkUsername() === true && checkEmail() === true) {
     form.setAttribute("action", "gallery.html");
 
     // Make tagline Develop something beautiful, {name} on gallery.html
+    // >>>------------------------------------------------------------>
     if (window.sessionStorage) {
       sessionStorage.setItem('txtName', nameInput.value);
       console.log(nameInput.value);
     }
   }
   else {
-    preventSubmit(event);
+    e.preventDefault(); // prevent default submit button
   }
 }
 
-function preventSubmit(e) {
-  e.preventDefault();
-}
 
 
 
