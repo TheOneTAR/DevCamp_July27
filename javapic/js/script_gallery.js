@@ -1,10 +1,17 @@
 // Gallery that is auto-populated with all the images in the folder.
 // >>>-------------------------------------------------------------->
 
-
 var gallery = document.getElementById('gallery');
+var tagline = document.querySelector(".tagline");
 var images = [];
 var numOfImages = 60;
+
+// Make tagline Develop something beautiful, {name} from join.html
+if (window.sessionStorage) {
+  console.log("logging the tagline " + tagline)
+  txtName = sessionStorage.getItem('txtName');
+  tagline.innerHTML = "develop something beautiful, " + txtName;
+}
 
 // makes and array of image names matching the directory of images
 function produceListOfImgNamesARRAY() {
