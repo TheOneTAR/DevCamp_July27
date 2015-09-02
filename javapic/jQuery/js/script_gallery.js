@@ -1,4 +1,4 @@
-// Gallery that is auto-populated with all the images in the folder.
+// Gallery that is auto-populated from image directory.
 // >>>-------------------------------------------------------------->
 
 var $gallery = $('#gallery');
