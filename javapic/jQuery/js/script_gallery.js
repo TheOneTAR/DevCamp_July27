@@ -34,8 +34,8 @@ $imgDivChild = $imgDiv.children('img:first-child');
 
 // show image when clicked to larger image
 $gallery.on('click', function(e) {
-  console.log(e.target.src);
-  $imgDiv.removeClass("display_none").addClass("display_img");
+  // console.log(e.target.src);
+  $imgDiv.toggleClass("display_none").addClass("display_img");
   $imgDivChild.attr('src', e.target.src);
 });
 
