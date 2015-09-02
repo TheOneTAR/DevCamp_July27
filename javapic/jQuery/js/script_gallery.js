@@ -49,6 +49,7 @@ $gallery.on('click', function(e) {
 // stop event flow bubbling when image is clicked
 $imgDivChild.on('click', function(e) {
   e.stopPropagation();
+  // console.log(e);
 })
 
 // hide image from the large image state
