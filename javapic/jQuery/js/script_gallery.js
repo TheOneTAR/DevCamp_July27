@@ -31,7 +31,8 @@ var items = [];
 $.each(images, function(i, item) {
   items.push('<li><img src=' + item + '></li>')
 });
-$gallery.append(items);
+$gallery.append(items)
+// $('li').hide().show(10000);
 
 // When an image is clicked, it should show up larger.
 // Clicking anywhere on the page should remove the larger preview.
