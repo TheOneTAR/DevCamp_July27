@@ -6,6 +6,12 @@ var $tagline = $('.tagline');
 var images = [];
 var imgMax = 60;
 
+// Make tagline .. {name} from join.html
+if (window.sessionStorage) {
+  txtName = sessionStorage.getItem('txtName');
+  $tagline.text("develop something beautiful, " + txtName);
+}
+
 // IFFE array of image names matching the directory of images
 (function produceListOfImgNamesARRAY() {
   for(var imgNum = 1; imgNum < imgMax + 1; imgNum++) {
@@ -20,7 +26,7 @@ var imgMax = 60;
   // console.log(images);
 })();
 
-// IFFE creates the DOM elements for manipulation, displays gallery
+// Creates the DOM elements for manipulation, displays gallery
 var items = [];
 $.each(images, function(i, item) {
   items.push('<li><img src=' + item + '></li>')
