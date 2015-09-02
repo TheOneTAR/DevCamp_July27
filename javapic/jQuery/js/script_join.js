@@ -24,32 +24,37 @@ $form.on('submit', function(e) {
 })
 
 // check validation for each input on blur
-$('input').on('blur', function() {
-  checkValidation();
-})
+// $('input').on('blur', function() {
+//   checkValidation();
+// })
 
 function checkValidation() {
+
   // check name
   if ($nameInput.val().length < 2) {
-
-    alert('Please provide a name of two or more characters.');
-    $nameInput.focus;
+    $nameInput.after('<span>Name needs at least 2 characters</span>');
+    $('span').css({"color": "#FF6666", "font-size": "10px"});
+    $nameInput.focus();
     return false
-  }
+  } else { $('span').hide(); }
+
   // check username
   if ($username.val().length < 2) {
-    alert('Please provide a username of two or more characters.');
-    $username.focus;
+    $username.after('<span>Username needs at least 2 characters</span>');
+    $('span').css({"color": "#FF6666", "font-size": "10px"});
+    $nameInput.focus();
     return false
-  }
+  } else { $('span').hide(); }
+
   // check email
   var valid = /[^@]+@[^@].+/;
   if (!valid.test($email.val())) {
-    alert('Please provide a valid email address.\n' +
-      'yourEmail@place.com');
-    $email.focus;
+    $email.after('<span>Email needs similar format as above</span>');
+    $('span').css({"color": "#FF6666", "font-size": "10px"});
+    $email.focus();
     return false
-  }
+  } else { $('span').hide(); }
+
   return true
 }
 
