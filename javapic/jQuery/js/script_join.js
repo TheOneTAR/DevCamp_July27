@@ -24,36 +24,40 @@ $form.on('submit', function(e) {
 })
 
 // check validation for each input on blur
-// $('input').on('blur', function() {
-//   checkValidation();
-// })
+$('input').on('blur', function() {
+  checkValidation();
+})
 
 function checkValidation() {
+
+  //  hide span
+  $('span').remove();
 
   // check name
   if ($nameInput.val().length < 2) {
     $nameInput.after('<span>Name needs at least 2 characters</span>');
     $('span').css({"color": "#FF6666", "font-size": "10px"});
-    $nameInput.focus();
+    // $nameInput.focus();
     return false
-  } else { $('span').hide(); }
+  }
 
   // check username
   if ($username.val().length < 2) {
     $username.after('<span>Username needs at least 2 characters</span>');
     $('span').css({"color": "#FF6666", "font-size": "10px"});
-    $nameInput.focus();
+    // $nameInput.focus();
     return false
-  } else { $('span').hide(); }
+  }
 
   // check email
   var valid = /[^@]+@[^@].+/;
   if (!valid.test($email.val())) {
-    $email.after('<span>Email needs similar format as above</span>');
+    span = '<span>Email needs similar format as above</span>';
+    $email.after(span);
     $('span').css({"color": "#FF6666", "font-size": "10px"});
-    $email.focus();
+    // $email.focus();
     return false
-  } else { $('span').hide(); }
+  }
 
   return true
 }
