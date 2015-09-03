@@ -14,7 +14,7 @@ email.addEventListener("blur", function(){ checkEmail(); });
 
 // check name input field
 function checkName() {
-  if (nameInput.value.length < 2) {
+  if (nameInput.val().length < 2) {
     alert('Please provide a name of two or more characters.');
     nameInput.focus;
     return false
@@ -23,7 +23,7 @@ function checkName() {
 }
 // check username input field
 function checkUsername() {
-  if (username.value.length < 2) {
+  if (username.val().length < 2) {
     alert('Please provide a username of two or more characters.');
     username.focus;
     return false
