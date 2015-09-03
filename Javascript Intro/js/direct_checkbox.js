@@ -173,3 +173,4 @@ function addNewStock() {
     document.getElementById('material').value = '';
     document.getElementById('price').value = '';
 }
+

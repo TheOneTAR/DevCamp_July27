@@ -20,17 +20,7 @@ function Product(name, stock, price) {
     };
 }
 
-function alertTheMedia(e, where) {
-    console.log(e);
-}
-
-ultag = document.getElementsByTagName('ul')[0];
-
-ultag.addEventListener('click', function (e) {
-    alertTheMedia(e, "ul")
-    }, false);
-
-var materials = [new Product('wood',10,15)];
+var materials = [];
 
 populateInventoryDOM();
 
@@ -173,3 +163,29 @@ function addNewStock() {
     document.getElementById('material').value = '';
     document.getElementById('price').value = '';
 }
+
+
+// Make an AJAX call to get the data from the server
+var newRequest = new XMLHttpRequest();
+
+newRequest.onload = function () {
+    if (newRequest.status === 200) {
+        var response = newRequest.responseXML;
+        var items = response.getElementsByTagName('item');
+
+        for (var i=0; i< items.length; i++) {
+            // Loop through item list and add items
+            var product = new Product(
+                items[i].getAttribute('name'),
+                items[i].getElementsByTagName('numInStock')[0].textContent,
+                items[i].getAttribute('price'));
+            materials.push(product);
+        }
+
+        populateInventoryDOM();
+
+    }
+};
+
+newRequest.open('GET','data/stock.xml', true);
+newRequest.send(null);
