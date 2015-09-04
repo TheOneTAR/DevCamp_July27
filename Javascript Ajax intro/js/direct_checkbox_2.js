@@ -1,9 +1,9 @@
 /**
-* Created by Chelsea on 8/26/15.
-*/
-
+ * Created by Chelsea on 9/3/15.
+ */
 var inventory = document.getElementById('inventory');
-var woodstock, material, price;
+
+
 
 function Product(name, stock, price) {
     this.checked = false;
@@ -24,13 +24,7 @@ function alertTheMedia(e, where) {
     console.log(e);
 }
 
-ultag = document.getElementsByTagName('ul')[0];
-
-ultag.addEventListener('click', function (e) {
-    alertTheMedia(e, "ul")
-    }, false);
-
-var materials = [new Product('wood',10,15)];
+var materials = [];
 
 populateInventoryDOM();
 
@@ -161,15 +155,27 @@ function addNewStock() {
     inventory.appendChild(newProdRow);
     materials.push(new Product(material, 10, price));
 
-    //var newRow = '<tr>';
-    //newRow += '<td><input type="checkbox"/></td>';
-    //newRow += '<td>' + material + '</td>';
-    //newRow += '<td>$' + price + '</td>';
-    //newRow += '<td class="false">No</td>';
-    //newRow += '</tr>';
-
-    //inventory.innerHTML += newRow;
-
     document.getElementById('material').value = '';
     document.getElementById('price').value = '';
 }
+
+var xhrRequest = new XMLHttpRequest();
+
+xhrRequest.onload = function(){
+    if(xhrRequest.status === 200){
+        response = JSON.parse(xhrRequest.responseText);
+        var items = response.inventory.items;
+
+        for (var i=0; i<items.length; i++) {
+            var product = new Product (
+                items[i].name,
+                items[i].price,
+                items[i].numInStock);
+            materials.push(product);
+        }
+        populateInventoryDOM();
+    }
+};
+
+xhrRequest.open('Get', 'data/stock.json', true);
+xhrRequest.send(null);

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Chelsea_Python_DevCamp/.idea/Chelsea_Python_DevCamp.iml" filepath="$PROJECT_DIR$/../Chelsea_Python_DevCamp/.idea/Chelsea_Python_DevCamp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/tiffany_devCamp.iml" filepath="$PROJECT_DIR$/.idea/tiffany_devCamp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../we-code-node-starter/.idea/we-code-node-starter.iml" filepath="$PROJECT_DIR$/../we-code-node-starter/.idea/we-code-node-starter.iml" />
+    </modules>
+  </component>
+</project>
