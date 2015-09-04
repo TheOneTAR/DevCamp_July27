@@ -7,6 +7,7 @@
     <list default="true" id="124d9453-7346-45c0-9915-0713f51bedef" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../we-code-node-starter/app.js" afterPath="$PROJECT_DIR$/../we-code-node-starter/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../we-code-node-starter/data.txt" afterPath="$PROJECT_DIR$/../we-code-node-starter/data.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Javascript Ajax intro/js/direct_checkbox_2.js" afterPath="$PROJECT_DIR$/Javascript Ajax intro/js/direct_checkbox_2.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../we-code-node-starter/static/index.html" afterPath="$PROJECT_DIR$/../we-code-node-starter/static/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../we-code-node-starter/static/listings.js" afterPath="$PROJECT_DIR$/../we-code-node-starter/static/listings.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../we-code-node-starter/static/style.css" afterPath="$PROJECT_DIR$/../we-code-node-starter/static/style.css" />
@@ -70,7 +71,7 @@
           <file leaf-file-name="direct_checkbox_2.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Javascript Ajax intro/js/direct_checkbox_2.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="3.5856574">
+                <state vertical-scroll-proportion="0.8804781">
                   <caret line="180" column="22" selection-start-line="180" selection-start-column="22" selection-end-line="180" selection-end-column="22" />
                   <folding />
                 </state>
@@ -287,20 +288,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="tiffany_devCamp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tiffany_devCamp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tiffany_devCamp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Javascript Ajax intro" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -696,14 +683,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18597998" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.08798283" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39820743" sideWeight="0.10586552" order="11" side_tool="true" content_ui="tabs" />
@@ -1142,7 +1129,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Javascript Ajax intro/js/direct_checkbox_2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.5856574">
+        <state vertical-scroll-proportion="0.8804781">
           <caret line="180" column="22" selection-start-line="180" selection-start-column="22" selection-end-line="180" selection-end-column="22" />
           <folding />
         </state>

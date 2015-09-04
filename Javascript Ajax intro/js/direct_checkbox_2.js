@@ -29,7 +29,7 @@ var materials = [];
 populateInventoryDOM();
 
 function populateInventoryDOM() {
-    // Loop through materials
+    // Loop thru materials
     // Add a row for each item in materials into the inventory
     // Make sure that stock class reflects inStock
     // Make sure that checkbox status reflects checked
