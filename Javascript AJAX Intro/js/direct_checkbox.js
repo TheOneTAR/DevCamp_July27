@@ -22,8 +22,6 @@ function Product(name, stock, price) {
 
 var materials = [];
 
-populateInventoryDOM();
-
 function populateInventoryDOM() {
     // Loop through materials
     // Add a row for each item in materials into the inventory
@@ -88,7 +86,6 @@ function removeStock() {
                     // Flip the status of the stock column
                     var stock = rows[i].lastElementChild;
                     stock.className = 'false';
-                    stock.textContent = 'No';
                 }
             }
         }
@@ -105,7 +102,6 @@ function addStock() {
                 // Flip the status of the stock column
                 var stock = rows[i].lastElementChild;
                 stock.className = 'true';
-                stock.textContent = 'Yes';
             }
         }
     }
@@ -189,3 +185,30 @@ newRequest.onload = function () {
 
 newRequest.open('GET','data/stock.xml', true);
 newRequest.send(null);
+
+// Get the JSON stuff
+var otherRequest = new XMLHttpRequest();
+
+otherRequest.onload = function () {
+    if (otherRequest.status === 200) {
+        var responseObject = JSON.parse(otherRequest.responseText);
+        var items = responseObject.inventory.item;
+
+        // Loop through the returned list, creating & adding Products
+        for (var i = 0; i < items.length; i++) {
+            var product = new Product(
+                items[i].name,
+                items[i].numInStock,
+                items[i].price
+            );
+            materials.push(product);
+        }
+
+        // Populate #inventory using the materials list
+        populateInventoryDOM();
+    }
+
+};
+
+otherRequest.open("GET", "data/stock.json", true);
+otherRequest.send(null);
