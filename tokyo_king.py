@@ -368,7 +368,7 @@ class Monster(object):
 
    def flee(self):
       """Prompt the Monster to see if they want to 
-      flee Tokyo. This is called after the monster has
+      flee Tokyo. This is called after the mosnter has
       been hit while in Tokyo.
 
       Return:

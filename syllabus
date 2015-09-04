@@ -60,6 +60,7 @@
    - UMLs
 - blackjack/21 game (pair programming, Lab)
    - Subclasses
+<<<<<<< HEAD
    - repr
 
 - HTML base structures (8/7/15)
@@ -84,3 +85,6 @@
    - Show them how to change the list style
    - Have them make a navigation section using lists
    
+=======
+   - repr
+>>>>>>> e1996ede9c9b400cbf592fd942bf73f260adf79c
