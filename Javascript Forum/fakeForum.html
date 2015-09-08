@@ -1,0 +1,130 @@
+<html>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #ccc;
+}
+
+header {
+    background-color: #fff;
+    text-align: center;
+}
+
+main {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1440px;
+
+    padding: 30px;
+}
+
+section {
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin: 25px 0;
+    padding: 30px;
+}
+
+section h3 {
+    margin-bottom: 10px;
+}
+
+form {
+    background-color: #fff;
+    padding: 30px;
+}
+
+form * {
+    display: block;
+    margin: 25px 0;
+}
+
+</style>
+<body>
+
+<header>
+    <h1>Fake Forum</h1>
+</header>
+
+<main>
+
+    <!-- Previous posts -->
+    <article id="forum"></article>
+
+    <form id="new-post">
+        <input id="title" name="Title" type="text"  placeholder="Post Title">
+        <textarea id="body" name="Body" placeholder="Post Body"> </textarea>
+
+        <button id="ButtonSubmit" onclick="postForumPost()" type="button" >Send</button> 
+    </form>
+</main>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+// Get the posts
+$.ajax({
+   url: "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values?alt=json-in-script",
+   data: {
+      format: 'json'
+   },
+    error: function() {
+      $('#info').html('<p>An error has occurred</p>');
+    },
+    dataType: 'jsonp',
+    success: function (data) {
+        var posts = data.feed.entry;
+        for (var i=0; i < posts.length; i++) {
+            console.log(posts[i])
+            buildPost(posts[i].gsx$postbody['$t'], 
+                      posts[i].gsx$posttitle['$t'],
+                      posts[i].gsx$timestamp['$t']);
+        } 
+
+    },
+    type: 'GET'
+});
+
+function buildPost(body, title, timestamp) {
+    var newPost = "<section><h3>" + title + "</h3>";
+    newPost += body + "</section>";
+    console.log(newPost);
+    $('#forum').append(newPost);
+}
+
+
+</script>
+<script type="text/javascript">
+    function postForumPost() {
+        var title = $('#title').val();
+        var body = $('#body').val();
+
+        console.log('in send function');
+            $.ajax({
+                url: "https://docs.google.com/forms/d/1blH7mM6udvlyJ0SrPmbXoNPZg8XCqDQaxHTPrK0HQbA/formResponse",
+                data: { "entry_434124687": title, 
+                        "entry_1823097801": body},
+                type: "POST",
+                dataType: "xml",
+                statusCode: {
+                    0: function () {
+                        window.location.replace("fakeForum.html");
+                    },
+                    200: function () {
+                        window.location.replace("fakeForum.html");
+                    }
+                }
+            });
+    }
+</script>
+
+</body>
+</html>

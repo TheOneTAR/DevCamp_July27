@@ -1,0 +1,144 @@
+Git
+
+Designed by Linus Torvalds, the creator of Linux, Git is version control software that manages changes to a project, without overwriting any part of the project.
+
+Why use Git?
+Say you're working on a web page, and so is your teammate. With Git, you and your teammate can both save copies of what you're working on to Git, without worrying about overriding each other's work. You can merge your two versions together later, either automagically or manually – depending on the location of the changes.
+
+If you or your teammember mess up the web page, no problem! You can just revert it to a previous version, as Git saves 'snapshots' of all your work. It's like Game Saves in a super hard video game – everytime you time, you just reload your last save point. Realize you're missing a cruical item? No worries! Just go back to another save file, back further in your progress.
+
+GitHub is a web site (and software program) that puts a pretty interface on top of Git. You can use the GitHub software to manage your projects, and then share and view that project on GitHub.com. In the end, though, you're still using Git, so it's best if you have a solid understanding of what is happening in Git.
+
+Terminology:
+Repository  (repo): a directory or storage space where your project lives. You can keep any kind of files in a repo.
+
+commit: create a snapshot of your project at this specific point in its life. Commits allow you to reevaluate and revert your project to previous states, as a commit is a saved state.
+
+master: The one True copy of a repo. This is Ultimate Version of your project, and should always be as stable as possible.
+
+branch: a full copy of a repo's master, to do with what you want. A branch is a safe place for you to work on your project, without fear of messing it up beyond repair. If working with multiple people on a project, it's best that each person work in their own branch, then merge their changes together on master.
+
+HEAD: this is where your git is currently pointing – the current state of your system. You can move your HEAD manually up and down your repo's timeline and across branches. When you run commands, they will be applied ontop of your HEAD.
+
+Git Commands:
+the things that you type into the commandline to make Git do things
+
+git init: initializes a new Git repo. This will turn a normal directory into a git repo.
+
+git help: provides a list of the 21 most common git commands
+
+git status: the rock of your relationship with git. It shows the currect status of your repo, including what branch you're on, if you have any files that are untracked by git in your repo, what is pending in your commit, etc.
+
+git add: brings the files passed to the command to git's attention, telling git that it should start tracking those files in this repo.
+
+git commit: the most IMPORTANT command; has git takes a snapshot of your repo; if you don't provide a -m argument, git will create a commit template message for you to edit, describing the changes you made in this snapshot, so it is easier to leverage in the future
+
+git branch: creates a new copy of the current repo and stores it as the name you provide; the name of your new branch should follow the command
+
+git checkout: literally "checks out" the supplied branch in the argument, allowing you to make changes with that copy of the repo. This command will change the files on your system to match the state of the checked out branch.
+
+git remote: shows the remote location that the current repo is set to push or pull its files to/from 
+
+git push: push the current local copy of your repo to the remote copy (this typically means onto GitHub for us)
+
+git pull: merge the latest version of your repo's remote with your local copy of the repo
+
+git merge: tell git to merge the passed branch with your current branch
+
+git diff: Shows the differences in a merge conflict
+
+git rebase: this command combines a git pull with a git merge, pulling and merging the supplied branch into the current one
+
+Git Merging:
+This is the part of version control that – let's be honest – no one particulary enjoys doing.
+
+What happens when you merge?
+Git merges the current state of the repo you're on with the repo you're merging in.
+If the development history is the same for the two repos, git will simply apply the latest changes ontop of the older, and fast-forward the HEAD.
+
+If the development history is different between the repos you're merging, git will find a common ancestor of the two repos, and then do a three-way merge between them and this ancestor. This three-way will be stored in it's own special snapshot, called a merge commit, and your HEAD will be set to point to this.
+
+Sometimes, things can go wrong with this.
+If you change the same part of the same file differently – even one character differently – git won't be able to automagically merge your repos together. 
+Git will not create a merge commit and will instead pause whatever it is doing and wait for you to resolve the conflict.
+These conflicting files will be shown as "unmerged" in your git status until you resolve the conflict(s).
+Git will add conflict-resolution markup to your conflicting files to show you the areas it barfed on.
+
+You'll have to manually open each of the conflicting files and remove the conflicts by picking which version you want (or a combo thereof), then saving and commiting those changes yourself.
+
+<<<<<<<<<< < HEAD:file.extension
+Everything in this uppersection of the markup is the stuff from your HEAD.
+
+===========
+Everything down here is from whatever you're merging in.
+
+>>>>>>>>>> > otherBranch:otherFile.extension
+
+There are various tools that you can use to help you resolve merge conflicts, but you should know how to do it manually, just in case.
+
+Let's do it together!
+- Clone the repo I post in Slack into a new directory on your machine. Make sure that directory is NOT in one of your existing repos.
+- Make sure you get the index.html file
+- create a new branch that is all your own, and then check it out
+- open index.html and add a new li ontop of the list that contains your name
+- commit the change
+- checkout master
+- merge your branch with master
+ 
+Notice the fast forward? Sweet. Let's make things tough.
+
+- add my name to the top of the list, while on master
+- commit this change
+- checkout your other branch
+- add "Ichi" to the top of the list now
+- commit this change
+- checkout master again
+- merge your branch in with master
+
+Conflict! Woo! 
+
+- run git diff to see the difference
+- open the file and resolve the conflict by keeping my name on top, and putting Ichi's name under it
+- commit this change. You'll need to add the file to the repo again, as git will have removed it when it became in conflict
+
+Woo! Ready for a tougher challenge?
+
+- pull from master
+- resolve the conflict that exists, by putting your changes ontop of mine
+- commit this fix, then push your changes
+
+Everyone got it? Right.
+- add your name to the top of the list (and commit the change)
+- push master
+- got a conflict? Pull, merge (with your name on top), and then try to push again.
+
+Git:
+practice idea: have them work on multiple branches on one depo (mine?) and play hot-potato with the code. They all have to modify the same file, adding their name to the top of the file. First person to get their name on the file 5 times wins. People keep adding until they have their name 5 times.
+
+
+Advanced Merging:
+Get into a sticky situation you're not ready to deal with yet? You can abort a merge, by simply saying git merge --abort
+If you have unstashed and/or uncommited changes in your branch, you will not be able to abort a merge.
+
+If, for some reason, things are dire and you just want to start over again, you can do git reset --hard HEAD to revert your repo to the last commited state. WARNING: any uncommited work will be lost, FOREVER.
+
+
+Let's clean up zen mock up (so I can grade it easier!)
+
+More AJAX and JS practice (with some HTML and CSS thrown in)
+- We're going to create a simple forum using AJAX
+
+Touch on?
+CSS:
+- * clear out
+- box-sizing: border-box
+- float (why would you use it? login on one side?)
+- ::before (do the arrows of the speech boxes)
+- ::after
+- flex box (the power)
+
+
+
+- AJAX with JQuery
+- page change onload
+- 
