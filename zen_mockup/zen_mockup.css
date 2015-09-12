@@ -94,7 +94,7 @@ article ~ article {
 
 aside {
     display: inline-block;
-    width: 97%;
+    width: 30%;
     vertical-align: top;
     margin-top: .3125em;
     margin-left: 4em;
@@ -154,6 +154,7 @@ main footer a {
     }
 
     aside {
+        width: 97%
         margin: 0 auto;
         display: block;
     }
