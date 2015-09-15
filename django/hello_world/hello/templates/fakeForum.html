@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+<link href="{% static "css/style.css" %}" rel="stylesheet" />
+
+<body>
+
+<header>
+    <h1>Fake Forum</h1>
+</header>
+
+<main>
+
+    <!-- Previous posts -->
+    <article id="forum"></article>
+
+    <form id="new-post">
+        <input id="title" name="Title" type="text"  placeholder="Post Title">
+        <textarea id="body" name="Body" placeholder="Post Body"> </textarea>
+
+        <button id="ButtonSubmit" onclick="postForumPost()" type="button" >Send</button> 
+    </form>
+</main>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="{% static "js/script.js" %}"></script>
+
+</body>
+</html>

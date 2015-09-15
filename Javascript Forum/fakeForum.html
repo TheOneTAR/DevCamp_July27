@@ -101,26 +101,6 @@ function buildPost(body, title, timestamp) {
 
 </script>
 <script type="text/javascript">
-    function postForumPost() {
-        var title = $('#title').val();
-        var body = $('#body').val();
-
-        $.ajax({
-            url: "https://docs.google.com/forms/d/1blH7mM6udvlyJ0SrPmbXoNPZg8XCqDQaxHTPrK0HQbA/formResponse",
-            data: { "entry_434124687": title, 
-                    "entry_1823097801": body},
-            type: "POST",
-            dataType: "xml",
-            statusCode: {
-                0: function () {
-                    window.location.replace("fakeForum.html");
-                },
-                200: function () {
-                    window.location.replace("fakeForum.html");
-                }
-            }
-        });
-    }
 </script>
 
 </body>
