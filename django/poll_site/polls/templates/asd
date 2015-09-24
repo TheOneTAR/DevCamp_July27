@@ -1,0 +1,6 @@
+1 foreach piece a:
+2   for each other type of piece b (6 types + empty space)
+3       foreach direction d
+4           Create a board with piece a.
+5           Place piece b in direction d.
+6           Try to move – check return value.
