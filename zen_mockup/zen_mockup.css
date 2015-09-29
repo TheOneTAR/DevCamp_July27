@@ -11,7 +11,7 @@ body {
 .page-wrapper {
     margin: 0;
     max-width: 1080px;
-    min-width: 768px;
+    min-width: 400px;
 }
 
 a {
@@ -44,10 +44,6 @@ h3 {
     font-size: 14px;
 }
 
-.header {
-    margin: 200px;
-}
-
 .preamble {
     display: block;
     background-color: #1B4549;
@@ -56,7 +52,7 @@ h3 {
     border-radius: 2px;
     box-shadow: 30px 40px #7AB3B0;
     margin-bottom: 40px;
-    min-width: 768px;
+    min-width: 400px;
 }
 
 .preamble h3, p {
