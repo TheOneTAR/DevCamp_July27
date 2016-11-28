@@ -1,3 +1,146 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+/*
+ * This CSS file was made for a MacBook Pro with non-retina display.
+=======
+/* 
+ * 
+ * CSS for Mini Zen Mock-Up. 
+ * 
+ * This is one solution.
+ *
+>>>>>>> master
+ */
+
+@import url(http://fonts.googleapis.com/css?family=Nova+Square);
+
+<<<<<<< HEAD
+* {
+    border-radius: 1px;
+}
+
+body {
+    background-color: #eee;
+    width: 72%;
+    min-width: 320px;
+    max-width: 900px;
+    margin: 60px auto;
+}
+
+h1 {
+    font-family: 'Nova Square', cursive;
+    font-size: 1.9em;
+    margin: 0.5em 0 0.45em;
+    color: #E23045;
+}
+
+h2 {
+    font-family: 'Nova Square', cursive;
+    font-size: 0.98em;
+    font-weight: 300;
+    padding: 2px;
+    background-color: #E23045;
+    color: #FFF6E0;
+}
+
+h3 {
+    font-family: 'Nova Square', cursive;
+    font-size: 0.75em;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    width: 60.5%;
+    min-width: 200px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+aside {
+    width: 170px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin-top: 4px;
+    padding-left: 35px;
+}
+
+li {
+    background-color: #E23045;
+    padding: 4px;
+    margin: 3px;
+    box-shadow: 6px 10px #F59581;
+    font: 0.6em sans-serif, Helvetica, Arial;
+    font-weight: 100;
+}
+
+li a {
+    color: #FFF6E0;
+}
+
+main article {
+    padding: 0 13px;
+    background-color: #FFF6E0;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #333;
+}
+
+main footer {
+    font: 0.6em sans-serif, Helvetica, Arial;
+    font-weight: 100;
+    text-align: right;
+}
+
+footer a {
+    color: #FFF6E0;
+    display: inline-block;
+    background-color: #908673;
+    padding: 4px;
+    box-shadow: 6px 10px #D8CFBC;
+}
+
+p {
+    font: 0.61em sans-serif, Helvetica, Arial;
+    line-height: 11px;
+}
+
+article a {
+    color: #E23045;
+}
+
+aside h3 {
+    display: none;
+}
+
+.preamble {
+    box-shadow: 19px 24px #7AB3B0;
+    background-color: #1B4549;
+    color: #FFF6E0;
+    padding: 6px;
+    margin-bottom: 37px;
+}
+
+.explanation {
+    margin-bottom: 6px;
+    box-shadow: 19px 26px #7AB3B0;
+}
+
+.participation {
+    margin-bottom: 33px;
+    box-shadow: 19px 26px #7AB3B0;
+}
+
+=======
+=======
 @import url(http://fonts.googleapis.com/css?family=Nova+Square);
 
 body {
@@ -7,6 +150,7 @@ body {
     background-color: #EEE;
     padding: 100px 15% 0 15% ;
 }
+>>>>>>> master
 
 .page-wrapper {
     margin: 0;
@@ -129,3 +273,4 @@ aside li {
     text-align: center;
     box-shadow: 10px 14px #F59581;
 }
+>>>>>>> master

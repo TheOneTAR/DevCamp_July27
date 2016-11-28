@@ -20,7 +20,11 @@
    - for loops
 
 - Maze
+<<<<<<< HEAD
+   - functions
+=======
    - functions – NEED TO SPEND MORE TIME ON THIS
+>>>>>>> master
    - stack
    - return vs print
    - while loops
@@ -60,6 +64,9 @@
    - UMLs
 - blackjack/21 game (pair programming, Lab)
    - Subclasses
+<<<<<<< HEAD
+   - repr
+=======
    - repr
 
 - HTML base structures (8/7/15)
@@ -84,3 +91,4 @@
    - Show them how to change the list style
    - Have them make a navigation section using lists
    
+>>>>>>> master
